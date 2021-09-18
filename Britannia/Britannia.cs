@@ -20,12 +20,12 @@ namespace Britannia
 
         private void btnAddShip_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Clicked!");
         }
 
         private void btnAddGear_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("More Clicked!");
         }
     }
 }

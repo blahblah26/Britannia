@@ -41,7 +41,7 @@ namespace Britannia
             this.grpMainFlt = new System.Windows.Forms.GroupBox();
             this.grpSubFlt = new System.Windows.Forms.GroupBox();
             this.grpVan = new System.Windows.Forms.GroupBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tpgOffice = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.splShipGear)).BeginInit();
             this.splShipGear.Panel1.SuspendLayout();
             this.splShipGear.Panel2.SuspendLayout();
@@ -137,7 +137,7 @@ namespace Britannia
             // 
             this.tclDockFleet.Controls.Add(this.tpgDryDock);
             this.tclDockFleet.Controls.Add(this.tpgFleetOrders);
-            this.tclDockFleet.Controls.Add(this.tabPage1);
+            this.tclDockFleet.Controls.Add(this.tpgOffice);
             this.tclDockFleet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tclDockFleet.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tclDockFleet.Location = new System.Drawing.Point(5, 5);
@@ -222,15 +222,15 @@ namespace Britannia
             this.grpVan.TabStop = false;
             this.grpVan.Text = "Vanguard";
             // 
-            // tabPage1
+            // tpgOffice
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1017, 600);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tpgOffice.Location = new System.Drawing.Point(4, 29);
+            this.tpgOffice.Name = "tpgOffice";
+            this.tpgOffice.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgOffice.Size = new System.Drawing.Size(1017, 600);
+            this.tpgOffice.TabIndex = 2;
+            this.tpgOffice.Text = "Office";
+            this.tpgOffice.UseVisualStyleBackColor = true;
             // 
             // Britannia
             // 
@@ -266,8 +266,8 @@ namespace Britannia
         private System.Windows.Forms.GroupBox grpVan;
         private System.Windows.Forms.Button btnAddShip;
         private System.Windows.Forms.Button btnAddGear;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TableLayoutPanel tlpFleets;
+        private System.Windows.Forms.TabPage tpgOffice;
     }
 }
 
