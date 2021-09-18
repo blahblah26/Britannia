@@ -16,32 +16,16 @@ namespace Britannia
         public Britannia()
         {
             InitializeComponent();
-            InitComponents();
         }
 
-        private void InitComponents()
+        private void btnAddShip_Click(object sender, EventArgs e)
         {
-            lblTest.Text = "This is cool";
-            lblTest.Size = new Size(500, 500);
-            lblTest.Visible = true;
-            lblTest.ForeColor = Color.Firebrick;
-            lblTest.Enabled = true;
-            lblTest.BackColor = Color.Aqua;
-            lblTest.Refresh();
-            ArrayList ar = new ArrayList();
-            for (int i = 0; i < 10; i++)
-            {
-                ar.Add(i);
-            }
-            cmbTest.DataSource = ar;
+
         }
 
-        private void lblTest_Click(object sender, EventArgs e)
+        private void btnAddGear_Click(object sender, EventArgs e)
         {
-            lblTest.Text = "clicked!";
-            lblTest.Size = new Size(1000, 1000);
-            lblTest.Font = new Font(FontFamily.GenericMonospace, 30);
-            lblTest.Refresh();
+
         }
     }
 }
