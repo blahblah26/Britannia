@@ -27,5 +27,10 @@ namespace Britannia
         {
             MessageBox.Show("More Clicked!");
         }
+
+        private void dgvShips_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
