@@ -40,6 +40,7 @@ namespace Britannia
             // btnAddShip
             // 
             this.btnAddShip.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAddShip.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddShip.Location = new System.Drawing.Point(85, 216);
             this.btnAddShip.Margin = new System.Windows.Forms.Padding(10, 5, 10, 10);
             this.btnAddShip.Name = "btnAddShip";
@@ -62,18 +63,25 @@ namespace Britannia
             // 
             // cbxShip
             // 
+            this.cbxShip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxShip.FormattingEnabled = true;
             this.cbxShip.Location = new System.Drawing.Point(10, 178);
-            this.cbxShip.Margin = new System.Windows.Forms.Padding(10, 10, 10, 5);
+            this.cbxShip.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.cbxShip.Name = "cbxShip";
             this.cbxShip.Size = new System.Drawing.Size(264, 28);
             this.cbxShip.TabIndex = 1;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(101, 78);
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Britannia.Properties.Resources._96px_Unknown_Ships;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(264, 156);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
