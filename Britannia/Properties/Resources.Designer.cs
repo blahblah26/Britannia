@@ -69,5 +69,15 @@ namespace Britannia.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _96px_Unknown_Ships {
+            get {
+                object obj = ResourceManager.GetObject("96px-Unknown_Ships", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

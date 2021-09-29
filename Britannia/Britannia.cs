@@ -20,7 +20,8 @@ namespace Britannia
 
         private void btnAddShip_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Clicked!");
+            AddShip addShip = new AddShip();
+            addShip.ShowDialog();
         }
 
         private void btnAddGear_Click(object sender, EventArgs e)
@@ -29,6 +30,11 @@ namespace Britannia
         }
 
         private void dgvShips_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Britannia_Load(object sender, EventArgs e)
         {
 
         }

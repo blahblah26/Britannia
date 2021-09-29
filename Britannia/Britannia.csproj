@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,10 +53,19 @@
     <Compile Include="Britannia.Designer.cs">
       <DependentUpon>Britannia.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddShip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddShip.Designer.cs">
+      <DependentUpon>AddShip.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Britannia.resx">
       <DependentUpon>Britannia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddShip.resx">
+      <DependentUpon>AddShip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -82,6 +92,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\11x11gridbw_p.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\96px-Unknown_Ships.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
