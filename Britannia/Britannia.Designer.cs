@@ -38,6 +38,10 @@ namespace Britannia
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddShip = new System.Windows.Forms.Button();
             this.dgvGear = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddGear = new System.Windows.Forms.Button();
             this.lblGear = new System.Windows.Forms.Label();
             this.tclDockFleet = new System.Windows.Forms.TabControl();
@@ -69,10 +73,7 @@ namespace Britannia
             this.btnVanFlt2 = new System.Windows.Forms.Button();
             this.btnVanFlt3 = new System.Windows.Forms.Button();
             this.tpgOffice = new System.Windows.Forms.TabPage();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tlpOrders = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.splShipGear)).BeginInit();
             this.splShipGear.Panel1.SuspendLayout();
             this.splShipGear.Panel2.SuspendLayout();
@@ -98,6 +99,7 @@ namespace Britannia
             ((System.ComponentModel.ISupportInitialize)(this.picVanFlt1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVanFlt2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVanFlt3)).BeginInit();
+            this.tlpOrders.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblShips
@@ -216,14 +218,34 @@ namespace Britannia
             this.dgvGear.Location = new System.Drawing.Point(10, 55);
             this.dgvGear.Margin = new System.Windows.Forms.Padding(10);
             this.dgvGear.Name = "dgvGear";
-            this.dgvGear.Size = new System.Drawing.Size(488, 467);
+            this.dgvGear.Size = new System.Drawing.Size(489, 467);
             this.dgvGear.TabIndex = 2;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Lma";
+            this.Column1.Name = "Column1";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Column7";
+            this.Column7.Name = "Column7";
             // 
             // btnAddGear
             // 
             this.btnAddGear.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAddGear.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddGear.Location = new System.Drawing.Point(194, 532);
+            this.btnAddGear.Location = new System.Drawing.Point(195, 532);
             this.btnAddGear.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddGear.Name = "btnAddGear";
             this.btnAddGear.Size = new System.Drawing.Size(115, 35);
@@ -270,7 +292,7 @@ namespace Britannia
             // 
             // tpgFleetOrders
             // 
-            this.tpgFleetOrders.Controls.Add(this.tlpFleets);
+            this.tpgFleetOrders.Controls.Add(this.tlpOrders);
             this.tpgFleetOrders.Location = new System.Drawing.Point(4, 29);
             this.tpgFleetOrders.Name = "tpgFleetOrders";
             this.tpgFleetOrders.Padding = new System.Windows.Forms.Padding(10);
@@ -281,6 +303,7 @@ namespace Britannia
             // 
             // tlpFleets
             // 
+            this.tlpFleets.AutoScroll = true;
             this.tlpFleets.BackColor = System.Drawing.Color.Transparent;
             this.tlpFleets.ColumnCount = 1;
             this.tlpFleets.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -288,7 +311,7 @@ namespace Britannia
             this.tlpFleets.Controls.Add(this.grpSubFlt, 0, 2);
             this.tlpFleets.Controls.Add(this.grpVan, 0, 1);
             this.tlpFleets.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpFleets.Location = new System.Drawing.Point(10, 10);
+            this.tlpFleets.Location = new System.Drawing.Point(0, 0);
             this.tlpFleets.Margin = new System.Windows.Forms.Padding(0);
             this.tlpFleets.Name = "tlpFleets";
             this.tlpFleets.Padding = new System.Windows.Forms.Padding(10);
@@ -296,7 +319,7 @@ namespace Britannia
             this.tlpFleets.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.334F));
             this.tlpFleets.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.333F));
             this.tlpFleets.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.333F));
-            this.tlpFleets.Size = new System.Drawing.Size(996, 578);
+            this.tlpFleets.Size = new System.Drawing.Size(569, 578);
             this.tlpFleets.TabIndex = 3;
             // 
             // grpMainFlt
@@ -308,7 +331,7 @@ namespace Britannia
             this.grpMainFlt.Margin = new System.Windows.Forms.Padding(0);
             this.grpMainFlt.Name = "grpMainFlt";
             this.grpMainFlt.Padding = new System.Windows.Forms.Padding(5);
-            this.grpMainFlt.Size = new System.Drawing.Size(976, 186);
+            this.grpMainFlt.Size = new System.Drawing.Size(549, 186);
             this.grpMainFlt.TabIndex = 0;
             this.grpMainFlt.TabStop = false;
             this.grpMainFlt.Text = "Main Fleet";
@@ -331,7 +354,7 @@ namespace Britannia
             this.tlpMainFlt.RowCount = 2;
             this.tlpMainFlt.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpMainFlt.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tlpMainFlt.Size = new System.Drawing.Size(966, 156);
+            this.tlpMainFlt.Size = new System.Drawing.Size(539, 156);
             this.tlpMainFlt.TabIndex = 0;
             // 
             // picMainFlt1
@@ -345,7 +368,7 @@ namespace Britannia
             this.picMainFlt1.Location = new System.Drawing.Point(5, 5);
             this.picMainFlt1.Margin = new System.Windows.Forms.Padding(5);
             this.picMainFlt1.Name = "picMainFlt1";
-            this.picMainFlt1.Size = new System.Drawing.Size(312, 106);
+            this.picMainFlt1.Size = new System.Drawing.Size(169, 106);
             this.picMainFlt1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMainFlt1.TabIndex = 0;
             this.picMainFlt1.TabStop = false;
@@ -358,10 +381,10 @@ namespace Britannia
             this.picMainFlt2.ErrorImage = global::Britannia.Properties.Resources._96px_Unknown_Ships;
             this.picMainFlt2.Image = global::Britannia.Properties.Resources._96px_Unknown_Ships;
             this.picMainFlt2.InitialImage = global::Britannia.Properties.Resources._96px_Unknown_Ships;
-            this.picMainFlt2.Location = new System.Drawing.Point(327, 5);
+            this.picMainFlt2.Location = new System.Drawing.Point(184, 5);
             this.picMainFlt2.Margin = new System.Windows.Forms.Padding(5);
             this.picMainFlt2.Name = "picMainFlt2";
-            this.picMainFlt2.Size = new System.Drawing.Size(311, 106);
+            this.picMainFlt2.Size = new System.Drawing.Size(169, 106);
             this.picMainFlt2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMainFlt2.TabIndex = 1;
             this.picMainFlt2.TabStop = false;
@@ -374,10 +397,10 @@ namespace Britannia
             this.picMainFlt3.ErrorImage = global::Britannia.Properties.Resources._96px_Unknown_Ships;
             this.picMainFlt3.Image = global::Britannia.Properties.Resources._96px_Unknown_Ships;
             this.picMainFlt3.InitialImage = global::Britannia.Properties.Resources._96px_Unknown_Ships;
-            this.picMainFlt3.Location = new System.Drawing.Point(648, 5);
+            this.picMainFlt3.Location = new System.Drawing.Point(363, 5);
             this.picMainFlt3.Margin = new System.Windows.Forms.Padding(5);
             this.picMainFlt3.Name = "picMainFlt3";
-            this.picMainFlt3.Size = new System.Drawing.Size(313, 106);
+            this.picMainFlt3.Size = new System.Drawing.Size(171, 106);
             this.picMainFlt3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMainFlt3.TabIndex = 2;
             this.picMainFlt3.TabStop = false;
@@ -385,7 +408,7 @@ namespace Britannia
             // btnMainFlt1
             // 
             this.btnMainFlt1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnMainFlt1.Location = new System.Drawing.Point(111, 121);
+            this.btnMainFlt1.Location = new System.Drawing.Point(39, 121);
             this.btnMainFlt1.Margin = new System.Windows.Forms.Padding(5);
             this.btnMainFlt1.Name = "btnMainFlt1";
             this.btnMainFlt1.Size = new System.Drawing.Size(100, 30);
@@ -396,7 +419,7 @@ namespace Britannia
             // btnMainFlt2
             // 
             this.btnMainFlt2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnMainFlt2.Location = new System.Drawing.Point(432, 121);
+            this.btnMainFlt2.Location = new System.Drawing.Point(218, 121);
             this.btnMainFlt2.Margin = new System.Windows.Forms.Padding(5);
             this.btnMainFlt2.Name = "btnMainFlt2";
             this.btnMainFlt2.Size = new System.Drawing.Size(100, 30);
@@ -407,7 +430,7 @@ namespace Britannia
             // btnMainFlt3
             // 
             this.btnMainFlt3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnMainFlt3.Location = new System.Drawing.Point(754, 121);
+            this.btnMainFlt3.Location = new System.Drawing.Point(398, 121);
             this.btnMainFlt3.Margin = new System.Windows.Forms.Padding(5);
             this.btnMainFlt3.Name = "btnMainFlt3";
             this.btnMainFlt3.Size = new System.Drawing.Size(100, 30);
@@ -423,7 +446,7 @@ namespace Britannia
             this.grpSubFlt.Margin = new System.Windows.Forms.Padding(0);
             this.grpSubFlt.Name = "grpSubFlt";
             this.grpSubFlt.Padding = new System.Windows.Forms.Padding(5);
-            this.grpSubFlt.Size = new System.Drawing.Size(976, 187);
+            this.grpSubFlt.Size = new System.Drawing.Size(549, 187);
             this.grpSubFlt.TabIndex = 2;
             this.grpSubFlt.TabStop = false;
             this.grpSubFlt.Text = "Submarine Fleet";
@@ -446,7 +469,7 @@ namespace Britannia
             this.tlpSubFlt.RowCount = 2;
             this.tlpSubFlt.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpSubFlt.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tlpSubFlt.Size = new System.Drawing.Size(966, 157);
+            this.tlpSubFlt.Size = new System.Drawing.Size(539, 157);
             this.tlpSubFlt.TabIndex = 1;
             // 
             // picSubFlt1
@@ -460,7 +483,7 @@ namespace Britannia
             this.picSubFlt1.Location = new System.Drawing.Point(5, 5);
             this.picSubFlt1.Margin = new System.Windows.Forms.Padding(5);
             this.picSubFlt1.Name = "picSubFlt1";
-            this.picSubFlt1.Size = new System.Drawing.Size(312, 107);
+            this.picSubFlt1.Size = new System.Drawing.Size(169, 107);
             this.picSubFlt1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSubFlt1.TabIndex = 0;
             this.picSubFlt1.TabStop = false;
@@ -473,10 +496,10 @@ namespace Britannia
             this.picSubFlt2.ErrorImage = global::Britannia.Properties.Resources._96px_Unknown_Ships;
             this.picSubFlt2.Image = global::Britannia.Properties.Resources._96px_Unknown_Ships;
             this.picSubFlt2.InitialImage = global::Britannia.Properties.Resources._96px_Unknown_Ships;
-            this.picSubFlt2.Location = new System.Drawing.Point(327, 5);
+            this.picSubFlt2.Location = new System.Drawing.Point(184, 5);
             this.picSubFlt2.Margin = new System.Windows.Forms.Padding(5);
             this.picSubFlt2.Name = "picSubFlt2";
-            this.picSubFlt2.Size = new System.Drawing.Size(311, 107);
+            this.picSubFlt2.Size = new System.Drawing.Size(169, 107);
             this.picSubFlt2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSubFlt2.TabIndex = 1;
             this.picSubFlt2.TabStop = false;
@@ -489,10 +512,10 @@ namespace Britannia
             this.picSubFlt3.ErrorImage = global::Britannia.Properties.Resources._96px_Unknown_Ships;
             this.picSubFlt3.Image = global::Britannia.Properties.Resources._96px_Unknown_Ships;
             this.picSubFlt3.InitialImage = global::Britannia.Properties.Resources._96px_Unknown_Ships;
-            this.picSubFlt3.Location = new System.Drawing.Point(648, 5);
+            this.picSubFlt3.Location = new System.Drawing.Point(363, 5);
             this.picSubFlt3.Margin = new System.Windows.Forms.Padding(5);
             this.picSubFlt3.Name = "picSubFlt3";
-            this.picSubFlt3.Size = new System.Drawing.Size(313, 107);
+            this.picSubFlt3.Size = new System.Drawing.Size(171, 107);
             this.picSubFlt3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSubFlt3.TabIndex = 2;
             this.picSubFlt3.TabStop = false;
@@ -500,7 +523,7 @@ namespace Britannia
             // btnSubFlt1
             // 
             this.btnSubFlt1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnSubFlt1.Location = new System.Drawing.Point(111, 122);
+            this.btnSubFlt1.Location = new System.Drawing.Point(39, 122);
             this.btnSubFlt1.Margin = new System.Windows.Forms.Padding(5);
             this.btnSubFlt1.Name = "btnSubFlt1";
             this.btnSubFlt1.Size = new System.Drawing.Size(100, 30);
@@ -511,7 +534,7 @@ namespace Britannia
             // btnSubFlt2
             // 
             this.btnSubFlt2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnSubFlt2.Location = new System.Drawing.Point(432, 122);
+            this.btnSubFlt2.Location = new System.Drawing.Point(218, 122);
             this.btnSubFlt2.Margin = new System.Windows.Forms.Padding(5);
             this.btnSubFlt2.Name = "btnSubFlt2";
             this.btnSubFlt2.Size = new System.Drawing.Size(100, 30);
@@ -522,7 +545,7 @@ namespace Britannia
             // btnSubFlt3
             // 
             this.btnSubFlt3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnSubFlt3.Location = new System.Drawing.Point(754, 122);
+            this.btnSubFlt3.Location = new System.Drawing.Point(398, 122);
             this.btnSubFlt3.Margin = new System.Windows.Forms.Padding(5);
             this.btnSubFlt3.Name = "btnSubFlt3";
             this.btnSubFlt3.Size = new System.Drawing.Size(100, 30);
@@ -538,7 +561,7 @@ namespace Britannia
             this.grpVan.Margin = new System.Windows.Forms.Padding(0);
             this.grpVan.Name = "grpVan";
             this.grpVan.Padding = new System.Windows.Forms.Padding(5);
-            this.grpVan.Size = new System.Drawing.Size(976, 185);
+            this.grpVan.Size = new System.Drawing.Size(549, 185);
             this.grpVan.TabIndex = 1;
             this.grpVan.TabStop = false;
             this.grpVan.Text = "Vanguard";
@@ -561,7 +584,7 @@ namespace Britannia
             this.tlpVanFlt.RowCount = 2;
             this.tlpVanFlt.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpVanFlt.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tlpVanFlt.Size = new System.Drawing.Size(966, 155);
+            this.tlpVanFlt.Size = new System.Drawing.Size(539, 155);
             this.tlpVanFlt.TabIndex = 1;
             // 
             // picVanFlt1
@@ -575,7 +598,7 @@ namespace Britannia
             this.picVanFlt1.Location = new System.Drawing.Point(5, 5);
             this.picVanFlt1.Margin = new System.Windows.Forms.Padding(5);
             this.picVanFlt1.Name = "picVanFlt1";
-            this.picVanFlt1.Size = new System.Drawing.Size(312, 105);
+            this.picVanFlt1.Size = new System.Drawing.Size(169, 105);
             this.picVanFlt1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picVanFlt1.TabIndex = 0;
             this.picVanFlt1.TabStop = false;
@@ -588,10 +611,10 @@ namespace Britannia
             this.picVanFlt2.ErrorImage = global::Britannia.Properties.Resources._96px_Unknown_Ships;
             this.picVanFlt2.Image = global::Britannia.Properties.Resources._96px_Unknown_Ships;
             this.picVanFlt2.InitialImage = global::Britannia.Properties.Resources._96px_Unknown_Ships;
-            this.picVanFlt2.Location = new System.Drawing.Point(327, 5);
+            this.picVanFlt2.Location = new System.Drawing.Point(184, 5);
             this.picVanFlt2.Margin = new System.Windows.Forms.Padding(5);
             this.picVanFlt2.Name = "picVanFlt2";
-            this.picVanFlt2.Size = new System.Drawing.Size(311, 105);
+            this.picVanFlt2.Size = new System.Drawing.Size(169, 105);
             this.picVanFlt2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picVanFlt2.TabIndex = 1;
             this.picVanFlt2.TabStop = false;
@@ -604,10 +627,10 @@ namespace Britannia
             this.picVanFlt3.ErrorImage = global::Britannia.Properties.Resources._96px_Unknown_Ships;
             this.picVanFlt3.Image = global::Britannia.Properties.Resources._96px_Unknown_Ships;
             this.picVanFlt3.InitialImage = global::Britannia.Properties.Resources._96px_Unknown_Ships;
-            this.picVanFlt3.Location = new System.Drawing.Point(648, 5);
+            this.picVanFlt3.Location = new System.Drawing.Point(363, 5);
             this.picVanFlt3.Margin = new System.Windows.Forms.Padding(5);
             this.picVanFlt3.Name = "picVanFlt3";
-            this.picVanFlt3.Size = new System.Drawing.Size(313, 105);
+            this.picVanFlt3.Size = new System.Drawing.Size(171, 105);
             this.picVanFlt3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picVanFlt3.TabIndex = 2;
             this.picVanFlt3.TabStop = false;
@@ -615,7 +638,7 @@ namespace Britannia
             // btnVanFlt1
             // 
             this.btnVanFlt1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnVanFlt1.Location = new System.Drawing.Point(111, 120);
+            this.btnVanFlt1.Location = new System.Drawing.Point(39, 120);
             this.btnVanFlt1.Margin = new System.Windows.Forms.Padding(5);
             this.btnVanFlt1.Name = "btnVanFlt1";
             this.btnVanFlt1.Size = new System.Drawing.Size(100, 30);
@@ -626,7 +649,7 @@ namespace Britannia
             // btnVanFlt2
             // 
             this.btnVanFlt2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnVanFlt2.Location = new System.Drawing.Point(432, 120);
+            this.btnVanFlt2.Location = new System.Drawing.Point(218, 120);
             this.btnVanFlt2.Margin = new System.Windows.Forms.Padding(5);
             this.btnVanFlt2.Name = "btnVanFlt2";
             this.btnVanFlt2.Size = new System.Drawing.Size(100, 30);
@@ -637,7 +660,7 @@ namespace Britannia
             // btnVanFlt3
             // 
             this.btnVanFlt3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnVanFlt3.Location = new System.Drawing.Point(754, 120);
+            this.btnVanFlt3.Location = new System.Drawing.Point(398, 120);
             this.btnVanFlt3.Margin = new System.Windows.Forms.Padding(5);
             this.btnVanFlt3.Name = "btnVanFlt3";
             this.btnVanFlt3.Size = new System.Drawing.Size(100, 30);
@@ -655,25 +678,19 @@ namespace Britannia
             this.tpgOffice.Text = "Office";
             this.tpgOffice.UseVisualStyleBackColor = true;
             // 
-            // Column1
+            // tlpOrders
             // 
-            this.Column1.HeaderText = "Lma";
-            this.Column1.Name = "Column1";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Column6";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Column7";
-            this.Column7.Name = "Column7";
+            this.tlpOrders.ColumnCount = 2;
+            this.tlpOrders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.14408F));
+            this.tlpOrders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.85592F));
+            this.tlpOrders.Controls.Add(this.tlpFleets, 0, 0);
+            this.tlpOrders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpOrders.Location = new System.Drawing.Point(10, 10);
+            this.tlpOrders.Name = "tlpOrders";
+            this.tlpOrders.RowCount = 1;
+            this.tlpOrders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpOrders.Size = new System.Drawing.Size(996, 578);
+            this.tlpOrders.TabIndex = 4;
             // 
             // Britannia
             // 
@@ -711,6 +728,7 @@ namespace Britannia
             ((System.ComponentModel.ISupportInitialize)(this.picVanFlt1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVanFlt2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVanFlt3)).EndInit();
+            this.tlpOrders.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -761,6 +779,7 @@ namespace Britannia
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.TableLayoutPanel tlpOrders;
     }
 }
 
