@@ -1,0 +1,5 @@
+﻿Name, ID, Rarity, Nation, Class, Armor, Luck, Speed, Oxygen, Ammo, HP[1, 100, 125], FP[1, 100, 125], AA[1, 100, 125], TRP[1, 100, 125], EVA[1, 100, 125], AVI[1, 100, 125],
+OIL[1, 100, 125], RLD[1, 100, 125], ASW[1, 100, 125], ACC[1, 100, 125], Slot 1, Slot 2, Slot 3, Eff Slot 1[LB0, LB3], Eff Slot 2[LB0, LB3], Eff Slot 3[LB0, LB3],
+Max Slot 1, Max slot 2, Max slot 3
+
+001, Universal Bulin, Elite, Destroyer, Universal, 23, 232, 23, 116, 23, 23
