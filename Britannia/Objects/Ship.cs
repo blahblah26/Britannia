@@ -45,7 +45,7 @@ namespace Britannia.Objects
         Medium,
         Heavy
     }
-    class Ship
+    public class Ship
     {
         private readonly string _name;
         private readonly string _id;
@@ -57,19 +57,19 @@ namespace Britannia.Objects
         private readonly int _speed;
         private readonly int _oxygen;
         private readonly int _ammo;
-        private readonly int[] _health;
-        private readonly int[] _firepower;
-        private readonly int[] _aa;
-        private readonly int[] _torpedo;
-        private readonly int[] _evasion;
-        private readonly int[] _airPower;
-        private readonly int[] _oil;
-        private readonly int[] _reload;
-        private readonly int[] _asw;
-        private readonly int[] _accuracy;
-        private readonly int[] _efficiencySlot1;
-        private readonly int[] _efficiencySlot2;
-        private readonly int[] _efficiencySlot3;
+        private readonly int _health;
+        private readonly int _firepower;
+        private readonly int _aa;
+        private readonly int _torpedo;
+        private readonly int _evasion;
+        private readonly int _airPower;
+        private readonly int _oil;
+        private readonly int _reload;
+        private readonly int _asw;
+        private readonly int _accuracy;
+        private readonly int _efficiencySlot1;
+        private readonly int _efficiencySlot2;
+        private readonly int _efficiencySlot3;
         private readonly GearTypes _slot1;
         private readonly GearTypes _slot2;
         private readonly GearTypes _slot3;
@@ -79,10 +79,10 @@ namespace Britannia.Objects
         
 
         public Ship(string name, string id, Rarity rarity, string nation, ShipTypes type, ArmorType armor,
-            int luck, int speed, int oxygen, int ammo, int[] health, int[] firepower, int[] aa, int[] torpedo,
-            int[] evasion, int[] airPower, int[] oil, int[] reload, int[] asw, int[] accuracy,
-            GearTypes slot1, GearTypes slot2, GearTypes slot3, int[] efficiencySlot1, int[] efficiencySlot2,
-            int[] efficiencySlot3, int maxSlot1, int maxSlot2, int maxSlot3)
+            int luck, int speed, int oxygen, int ammo, int health, int firepower, int aa, int torpedo,
+            int evasion, int airPower, int oil, int reload, int asw, int accuracy,
+            GearTypes slot1, GearTypes slot2, GearTypes slot3, int efficiencySlot1, int efficiencySlot2,
+            int efficiencySlot3, int maxSlot1, int maxSlot2, int maxSlot3)
         {
             _name = name;
             _id = id;
@@ -147,192 +147,31 @@ namespace Britannia.Objects
 
         public GearTypes Slot3 => _slot3;
 
-        public int[] Health => _health;
+        public int Health => _health;
 
-        public int[] Firepower => _firepower;
+        public int Firepower => _firepower;
 
-        public int[] Aa => _aa;
+        public int Aa => _aa;
 
-        public int[] Torpedo => _torpedo;
+        public int Torpedo => _torpedo;
 
-        public int[] Evasion => _evasion;
+        public int Evasion => _evasion;
 
-        public int[] AirPower => _airPower;
+        public int AirPower => _airPower;
 
-        public int[] Oil => _oil;
+        public int Oil => _oil;
 
-        public int[] Reload => _reload;
+        public int Reload => _reload;
 
-        public int[] Asw => _asw;
+        public int Asw => _asw;
 
-        public int[] Accuracy => _accuracy;
+        public int Accuracy => _accuracy;
 
-        public int[] EfficiencySlot1 => _efficiencySlot1;
+        public int EfficiencySlot1 => _efficiencySlot1;
 
-        public int[] EfficiencySlot2 => _efficiencySlot2;
+        public int EfficiencySlot2 => _efficiencySlot2;
 
-        public int[] EfficiencySlot3 => _efficiencySlot3;
+        public int EfficiencySlot3 => _efficiencySlot3;
 
-        public int GetHealth(int level)
-        {
-            switch (level)
-            {
-                case 1:
-                    return _health[0];
-                case 100:
-                    return _health[1];
-                case 125:
-                    return _health[2];
-                default:
-                    throw new ArgumentOutOfRangeException("Levels must be 1, 100, or 125.");
-            }
-        }
-
-        public int GetFirepower(int level)
-        {
-            switch (level)
-            {
-                case 1:
-                    return _firepower[0];
-                case 100:
-                    return _firepower[1];
-                case 125:
-                    return _firepower[2];
-                default:
-                    throw new ArgumentOutOfRangeException("Levels must be 1, 100, or 125.");
-            }
-        }
-        public int GetAA(int level)
-        {
-            switch (level)
-            {
-                case 1:
-                    return _aa[0];
-                case 100:
-                    return _aa[1];
-                case 125:
-                    return _aa[2];
-                default:
-                    throw new ArgumentOutOfRangeException("Levels must be 1, 100, or 125.");
-            }
-        }
-
-        public int GetTorpedo(int level)
-        {
-            switch (level)
-            {
-                case 1:
-                    return _torpedo[0];
-                case 100:
-                    return _torpedo[1];
-                case 125:
-                    return _torpedo[2];
-                default:
-                    throw new ArgumentOutOfRangeException("Levels must be 1, 100, or 125.");
-            }
-        }
-
-        public int GetEvasion(int level)
-        {
-            switch (level)
-            {
-                case 1:
-                    return _evasion[0];
-                case 100:
-                    return _evasion[1];
-                case 125:
-                    return _evasion[2];
-                default:
-                    throw new ArgumentOutOfRangeException("Levels must be 1, 100, or 125.");
-            }
-        }
-
-        public int GetAirPower(int level)
-        {
-            switch (level)
-            {
-                case 1:
-                    return _airPower[0];
-                case 100:
-                    return _airPower[1];
-                case 125:
-                    return _airPower[2];
-                default:
-                    throw new ArgumentOutOfRangeException("Levels must be 1, 100, or 125.");
-            }
-        }
-
-        public int GetOil(int level)
-        {
-            switch (level)
-            {
-                case 1:
-                    return _oil[0];
-                case 100:
-                    return _oil[1];
-                case 125:
-                    return _oil[2];
-                default:
-                    throw new ArgumentOutOfRangeException("Levels must be 1, 100, or 125.");
-            }
-        }
-
-        public int GetReload(int level)
-        {
-            switch (level)
-            {
-                case 1:
-                    return _reload[0];
-                case 100:
-                    return _reload[1];
-                case 125:
-                    return _reload[2];
-                default:
-                    throw new ArgumentOutOfRangeException("Levels must be 1, 100, or 125.");
-            }
-        }
-
-        public int GetASW(int level)
-        {
-            switch (level)
-            {
-                case 1:
-                    return _asw[0];
-                case 100:
-                    return _asw[1];
-                case 125:
-                    return _asw[2];
-                default:
-                    throw new ArgumentOutOfRangeException("Levels must be 1, 100, or 125.");
-            }
-        }
-
-        public int GetAccuracy(int level)
-        {
-            switch (level)
-            {
-                case 1:
-                    return _accuracy[0];
-                case 100:
-                    return _accuracy[1];
-                case 125:
-                    return _accuracy[2];
-                default:
-                    throw new ArgumentOutOfRangeException("Levels must be 1, 100, or 125.");
-            }
-        }
-
-        public int GetEfficiencySlot1(bool maxLB)
-        {
-            return maxLB ? _efficiencySlot1[0] : _efficiencySlot1[1];
-        }
-        public int GetEfficiencySlot2(bool maxLB)
-        {
-            return maxLB ? _efficiencySlot2[0] : _efficiencySlot2[1];
-        }
-        public int GetEfficiencySlot3(bool maxLB)
-        {
-            return maxLB ? _efficiencySlot3[0] : _efficiencySlot3[1];
-        }
     }
 }

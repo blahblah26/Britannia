@@ -28,7 +28,7 @@ namespace Britannia.Objects
         Cargo    = 0b_0001_0000_0000_0000,
         ASWGear  = 0b_0010_0000_0000_0000
     }
-    abstract class Gear
+    public abstract class Gear
     {
         private readonly string _name;
         private readonly string _id;
