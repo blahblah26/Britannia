@@ -17,25 +17,28 @@ namespace Britannia
         public delegate void UpdateShipHandler(object sender, UpdateShipEventArgs e);
 
         public event UpdateShipHandler UpdateShip; 
-        public AddShip()
+        public AddShip(bool useAvailable)
         {
             InitializeComponent();
-            lbxAddedShips.DataSource = Britannia.shipCatalogue;
+            
+            lbxAddedShips.DataSource = useAvailable ? Britannia.ships : Britannia.availableShips;
             lbxAddedShips.DisplayMember = "Name";
             lbxAddedShips.ValueMember = "ID";
         }
 
         private void btnAddShip_Click(object sender, EventArgs e)
         {
+            if (lbxAddedShips.SelectedItem == null)
+            {
+                this.Dispose();
+                return;
+            }
             UpdateShipEventArgs args = new UpdateShipEventArgs(Britannia.shipCatalogue.Find(s =>
                 s.ID == lbxAddedShips.SelectedValue.ToString()));
             UpdateShip(this, args);
+            
             this.Dispose();
         }
-
-       
-
-
         private void lbxAddedShips_SelectedIndexChanged(object sender, EventArgs e)
         {
             

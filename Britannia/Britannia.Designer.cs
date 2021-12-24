@@ -29,8 +29,6 @@ namespace Britannia
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblShips = new System.Windows.Forms.Label();
             this.splShipGear = new System.Windows.Forms.SplitContainer();
             this.dgvShips = new System.Windows.Forms.DataGridView();
@@ -150,26 +148,10 @@ namespace Britannia
             this.dgvShips.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvShips.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvShips.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShips.Location = new System.Drawing.Point(10, 55);
             this.dgvShips.Margin = new System.Windows.Forms.Padding(10);
             this.dgvShips.Name = "dgvShips";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvShips.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvShips.RowHeadersVisible = false;
             this.dgvShips.Size = new System.Drawing.Size(467, 467);
             this.dgvShips.TabIndex = 3;
@@ -200,14 +182,14 @@ namespace Britannia
             this.dgvGear.Location = new System.Drawing.Point(10, 55);
             this.dgvGear.Margin = new System.Windows.Forms.Padding(10);
             this.dgvGear.Name = "dgvGear";
-            this.dgvGear.Size = new System.Drawing.Size(492, 467);
+            this.dgvGear.Size = new System.Drawing.Size(494, 467);
             this.dgvGear.TabIndex = 2;
             // 
             // btnAddGear
             // 
             this.btnAddGear.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAddGear.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddGear.Location = new System.Drawing.Point(198, 532);
+            this.btnAddGear.Location = new System.Drawing.Point(200, 532);
             this.btnAddGear.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddGear.Name = "btnAddGear";
             this.btnAddGear.Size = new System.Drawing.Size(115, 35);
@@ -376,6 +358,7 @@ namespace Britannia
             this.btnVanFlt1.TabIndex = 3;
             this.btnVanFlt1.Text = "Select";
             this.btnVanFlt1.UseVisualStyleBackColor = true;
+            this.btnVanFlt1.Click += new System.EventHandler(this.btnVanFlt1_Click);
             // 
             // btnVanFlt2
             // 
@@ -387,6 +370,7 @@ namespace Britannia
             this.btnVanFlt2.TabIndex = 4;
             this.btnVanFlt2.Text = "Select";
             this.btnVanFlt2.UseVisualStyleBackColor = true;
+            this.btnVanFlt2.Click += new System.EventHandler(this.btnVanFlt2_Click);
             // 
             // btnVanFlt3
             // 
@@ -398,6 +382,7 @@ namespace Britannia
             this.btnVanFlt3.TabIndex = 5;
             this.btnVanFlt3.Text = "Select";
             this.btnVanFlt3.UseVisualStyleBackColor = true;
+            this.btnVanFlt3.Click += new System.EventHandler(this.btnVanFlt3_Click);
             // 
             // grpMainFlt
             // 
@@ -492,6 +477,7 @@ namespace Britannia
             this.btnMainFlt1.TabIndex = 3;
             this.btnMainFlt1.Text = "Select";
             this.btnMainFlt1.UseVisualStyleBackColor = true;
+            this.btnMainFlt1.Click += new System.EventHandler(this.btnMainFlt1_Click);
             // 
             // btnMainFlt2
             // 
@@ -503,6 +489,7 @@ namespace Britannia
             this.btnMainFlt2.TabIndex = 4;
             this.btnMainFlt2.Text = "Select";
             this.btnMainFlt2.UseVisualStyleBackColor = true;
+            this.btnMainFlt2.Click += new System.EventHandler(this.btnMainFlt2_Click);
             // 
             // btnMainFlt3
             // 
@@ -514,6 +501,7 @@ namespace Britannia
             this.btnMainFlt3.TabIndex = 5;
             this.btnMainFlt3.Text = "Select";
             this.btnMainFlt3.UseVisualStyleBackColor = true;
+            this.btnMainFlt3.Click += new System.EventHandler(this.btnMainFlt3_Click);
             // 
             // grpSubFlt
             // 
@@ -607,6 +595,7 @@ namespace Britannia
             this.btnSubFlt1.TabIndex = 3;
             this.btnSubFlt1.Text = "Select";
             this.btnSubFlt1.UseVisualStyleBackColor = true;
+            this.btnSubFlt1.Click += new System.EventHandler(this.btnSubFlt1_Click);
             // 
             // btnSubFlt2
             // 
@@ -618,6 +607,7 @@ namespace Britannia
             this.btnSubFlt2.TabIndex = 4;
             this.btnSubFlt2.Text = "Select";
             this.btnSubFlt2.UseVisualStyleBackColor = true;
+            this.btnSubFlt2.Click += new System.EventHandler(this.btnSubFlt2_Click);
             // 
             // btnSubFlt3
             // 
@@ -629,6 +619,7 @@ namespace Britannia
             this.btnSubFlt3.TabIndex = 5;
             this.btnSubFlt3.Text = "Select";
             this.btnSubFlt3.UseVisualStyleBackColor = true;
+            this.btnSubFlt3.Click += new System.EventHandler(this.btnSubFlt3_Click);
             // 
             // comboBox1
             // 

@@ -20,9 +20,17 @@ namespace Britannia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Britannia());
+            Britannia br = new Britannia();
+            if (br == null)
+            {
+                return;
+            } else
+            {
+                Application.Run(br);
 
-            
+            }
+
+
             Ship ship = new Ship("New Jersey", "068", Rarity.UltraRare, "Eagle Union", ShipTypes.BB, ArmorType.Heavy, 72, 33, -1, -1,
                 9745, 453, 438 ,0,
                40,0,17, 172,0,

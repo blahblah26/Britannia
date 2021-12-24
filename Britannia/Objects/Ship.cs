@@ -173,5 +173,67 @@ namespace Britannia.Objects
 
         public int EfficiencySlot3 => _efficiencySlot3;
 
+        public override bool Equals(object obj)
+        {
+            return obj is Ship ship &&
+                   _name == ship._name &&
+                   _id == ship._id &&
+                   _rarity == ship._rarity &&
+                   _nation == ship._nation &&
+                   _type == ship._type &&
+                   _armor == ship._armor &&
+                   _luck == ship._luck &&
+                   _speed == ship._speed &&
+                   _oxygen == ship._oxygen &&
+                   _ammo == ship._ammo &&
+                   _health == ship._health &&
+                   _firepower == ship._firepower &&
+                   _aa == ship._aa &&
+                   _torpedo == ship._torpedo &&
+                   _evasion == ship._evasion &&
+                   _airPower == ship._airPower &&
+                   _oil == ship._oil &&
+                   _reload == ship._reload &&
+                   _asw == ship._asw &&
+                   _accuracy == ship._accuracy &&
+                   _efficiencySlot1 == ship._efficiencySlot1 &&
+                   _efficiencySlot2 == ship._efficiencySlot2 &&
+                   _efficiencySlot3 == ship._efficiencySlot3 &&
+                   _slot1 == ship._slot1 &&
+                   _slot2 == ship._slot2 &&
+                   _slot3 == ship._slot3 &&
+                   _maxSlot1 == ship._maxSlot1 &&
+                   _maxSlot2 == ship._maxSlot2 &&
+                   _maxSlot3 == ship._maxSlot3 &&
+                   Name == ship.Name &&
+                   ID == ship.ID &&
+                   Nation == ship.Nation &&
+                   Luck == ship.Luck &&
+                   Speed == ship.Speed &&
+                   Oxygen == ship.Oxygen &&
+                   Ammo == ship.Ammo &&
+                   Rarity == ship.Rarity &&
+                   Type == ship.Type &&
+                   Armor == ship.Armor &&
+                   MaxSlot1 == ship.MaxSlot1 &&
+                   MaxSlot2 == ship.MaxSlot2 &&
+                   MaxSlot3 == ship.MaxSlot3 &&
+                   Slot1 == ship.Slot1 &&
+                   Slot2 == ship.Slot2 &&
+                   Slot3 == ship.Slot3 &&
+                   Health == ship.Health &&
+                   Firepower == ship.Firepower &&
+                   Aa == ship.Aa &&
+                   Torpedo == ship.Torpedo &&
+                   Evasion == ship.Evasion &&
+                   AirPower == ship.AirPower &&
+                   Oil == ship.Oil &&
+                   Reload == ship.Reload &&
+                   Asw == ship.Asw &&
+                   Accuracy == ship.Accuracy &&
+                   EfficiencySlot1 == ship.EfficiencySlot1 &&
+                   EfficiencySlot2 == ship.EfficiencySlot2 &&
+                   EfficiencySlot3 == ship.EfficiencySlot3;
+        }
     }
 }
