@@ -29,7 +29,8 @@ namespace Britannia
                 Application.Run(br);
 
             }
-            //tmp.doIt();
+            //tmp TMP = new tmp();
+            //TMP.doIt();
         }
     }
 }

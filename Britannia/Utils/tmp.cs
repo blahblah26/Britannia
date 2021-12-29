@@ -23,8 +23,12 @@ namespace Britannia.Utils
             Ship ship2 = new Ship("Univeral Bulin", "001", Rarity.Elite, "Universal", ShipTypes.DD,
                 ArmorType.Light, 100, 35, -1, -1, 237, 23, 23, 23, 118, 23, 3, 118, 34, 118,
                 GearTypes.DDGun, GearTypes.AAGun, GearTypes.AAGun, 100, 100, 100, 1, 1, 1);
+            Ship ship3 = new Ship("U-81", "341", Rarity.SuperRare, "Iron Blood", ShipTypes.SS,
+                ArmorType.Light, 23, 14, 188, 2, 1341, 51, 0, 562, 38, 0, 7, 110, 0, 179,
+                GearTypes.SubTorp, GearTypes.SubTorp, GearTypes.DDGun, 130, 125, 85, 2, 2, 1);
             bruh.Add(ship);
             bruh.Add(ship2);
+            bruh.Add(ship3);
             ImmutableList<Ship> lmao = bruh.ToImmutableList();
 
             var options = new JsonSerializerOptions
@@ -34,7 +38,7 @@ namespace Britannia.Utils
             };
 
             List<Ship> help = new List<Ship>();
-            string tmp = JsonSerializer.Serialize(help, options);
+            string tmp = JsonSerializer.Serialize(bruh, options);
             File.WriteAllText(@"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\ships.txt", tmp);
         }
     }

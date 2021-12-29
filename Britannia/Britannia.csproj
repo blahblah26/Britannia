@@ -136,7 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Utils\catalogue.txt" />
-    <Content Include="Utils\ships.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

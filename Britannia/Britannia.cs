@@ -224,11 +224,16 @@ namespace Britannia
         {
             return (object sender, UpdateShipEventArgs e) =>
             {
+                stats[fleet, 0] = 0;
+                stats[fleet, 1] = 0;
+                stats[fleet, 2] = 0;
+                stats[fleet, 3] = 0;
+                stats[fleet, 4] = 0;
                 for (int i = 0; i < 3; i++)
                 {
                     if (fleets[fleet,i] != null) {
 
-                        stats[fleet,0] += fleets[fleet,i].Firepower;
+                        stats[fleet, 0] += fleets[fleet, i].Firepower;
                         stats[fleet, 1] += fleets[fleet, i].AirPower;
                         stats[fleet, 2] += fleets[fleet, i].Torpedo;
                         stats[fleet, 3] += fleets[fleet, i].Evasion;
@@ -357,12 +362,12 @@ namespace Britannia
 
         private void lbxVan_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblVan.Text = stats[1, lbxMain.SelectedIndex].ToString();
+            lblVan.Text = stats[1, lbxVan.SelectedIndex].ToString();
         }
 
         private void lbxSub_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblSub.Text = stats[2, lbxMain.SelectedIndex].ToString();
+            lblSub.Text = stats[2, lbxSub.SelectedIndex].ToString();
         }
     }
 }
