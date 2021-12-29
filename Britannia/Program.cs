@@ -29,14 +29,6 @@ namespace Britannia
                 Application.Run(br);
 
             }
-
-
-            Ship ship = new Ship("New Jersey", "068", Rarity.UltraRare, "Eagle Union", ShipTypes.BB, ArmorType.Heavy, 72, 33, -1, -1,
-                9745, 453, 438 ,0,
-               40,0,17, 172,0,
-                76, GearTypes.BBGun, GearTypes.DDGun | GearTypes.CLGun, GearTypes.AAGun, 150, 120,
-                130, 3, 3, 1);
-            tmp tmp = new tmp();
             //tmp.doIt();
         }
     }

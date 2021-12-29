@@ -23,6 +23,7 @@ namespace Britannia
         public static BindingList<Gear> gears;
         public static BindingList<Ship> availableShips;
         public static Ship[,] fleets;
+        private int[,] stats;
 
         public Britannia()
         {
@@ -32,7 +33,7 @@ namespace Britannia
         private void btnAddShip_Click(object sender, EventArgs e)
         {
 
-            AddShip addShip = new AddShip(false);
+            AddShip addShip = new AddShip(availableShips);
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateShips);
             addShip.ShowDialog();
         }
@@ -80,6 +81,7 @@ namespace Britannia
             string gearPath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\gears.txt";
             string availablePath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\available.txt";
             string fleetPath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\fleets.txt";
+            string statPath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\stats.txt";
 
             var options = new JsonSerializerOptions
             {
@@ -179,21 +181,67 @@ namespace Britannia
                 fleets = new Ship[3, 3];
             }
 
+            if (File.Exists(statPath))
+            {
+                string statJSON = File.ReadAllText(statPath);
+                try
+                {
+                    stats = JsonSerializer.Deserialize<int[,]>(statJSON, options);
+                }
+                catch (JsonException)
+                {
+                    MessageBox.Show("json aer inte lika trevlig som min flickvaen", "Unable to read data",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    stats = new int[3,6];
+                }
+            }
+            else
+            {
+                stats = new int[3,6];
+            }
+
             if (availableShips.Count == 0)
             {
                 btnAddShip.Enabled = false;
             }
             dgvShips.DataSource = ships;
             dgvGear.DataSource = gears;
+            lbxMain.SelectedIndex = 0;
+            lbxVan.SelectedIndex = 0;
+            lbxSub.SelectedIndex = 0;
         }
 
         private void btnMainFlt1_Click(object sender, EventArgs e)
         {
-            AddShip addShip = new AddShip(true);
+            AddShip addShip = new AddShip(new BindingList<Ship>(ships.Where(s => (s.Type &
+            (ShipTypes.AR | ShipTypes.BB | ShipTypes.BC | ShipTypes.BBV | ShipTypes.BM | ShipTypes.CV | ShipTypes.CVL)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(0, 0));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(0));
             addShip.ShowDialog();
         }
 
+        private Action<object, UpdateShipEventArgs> updateFleetData(int fleet)
+        {
+            return (object sender, UpdateShipEventArgs e) =>
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    if (fleets[fleet,i] != null) {
+
+                        stats[fleet,0] += fleets[fleet,i].Firepower;
+                        stats[fleet, 1] += fleets[fleet, i].AirPower;
+                        stats[fleet, 2] += fleets[fleet, i].Torpedo;
+                        stats[fleet, 3] += fleets[fleet, i].Evasion;
+                        stats[fleet, 4] += fleets[fleet, i].Aa;
+
+                    }
+                }
+                stats[fleet, 5] = (int) Math.Round(Math.Pow(stats[fleet, 1] + stats[fleet, 3], 2.0 / 3.0));
+                lbxVan_SelectedIndexChanged(sender, e);
+                lbxMain_SelectedIndexChanged(sender, e);
+                lbxSub_SelectedIndexChanged(sender, e);
+            };
+        }
         private Action<object, UpdateShipEventArgs> updateFleets(int fleet, int idx)
         {
             return (object sender, UpdateShipEventArgs e) =>
@@ -216,73 +264,105 @@ namespace Britannia
                     }
                 }
                 fleets[fleet, idx] = e.getShip();
-                string s = "";
-                for (int i = 0; i < 3; i++)
-                {
-                    for (int j = 0; j < 3; j++)
-                    {
-                        s += fleets[i, j] == null ? "null " : fleets[i, j].Name + " ";
-                    }
-                    s += "\r\n";
-                }
-                MessageBox.Show(s);
+                
             };
         }
 
         private void btnMainFlt2_Click(object sender, EventArgs e)
         {
-            AddShip addShip = new AddShip(true);
+            AddShip addShip = new AddShip(new BindingList<Ship>(ships.Where(s => (s.Type &
+            (ShipTypes.AR | ShipTypes.BB | ShipTypes.BC | ShipTypes.BBV | ShipTypes.BM | ShipTypes.CV | ShipTypes.CVL)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(0, 1));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(0));
             addShip.ShowDialog();
         }
 
         private void btnMainFlt3_Click(object sender, EventArgs e)
         {
-            AddShip addShip = new AddShip(true);
+            AddShip addShip = new AddShip(new BindingList<Ship>(ships.Where(s => (s.Type &
+            (ShipTypes.AR | ShipTypes.BB | ShipTypes.BC | ShipTypes.BBV | ShipTypes.BM | ShipTypes.CV | ShipTypes.CVL)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(0, 2));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(0));
             addShip.ShowDialog();
         }
 
         private void btnVanFlt1_Click(object sender, EventArgs e)
         {
-            AddShip addShip = new AddShip(true);
+            AddShip addShip = new AddShip(new BindingList<Ship>(ships.Where(s => (s.Type &
+            (ShipTypes.AE | ShipTypes.CA | ShipTypes.CB | ShipTypes.CL | ShipTypes.DD)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(1, 0));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(1));
             addShip.ShowDialog();
         }
 
         private void btnVanFlt2_Click(object sender, EventArgs e)
         {
-            AddShip addShip = new AddShip(true);
+            AddShip addShip = new AddShip(new BindingList<Ship>(ships.Where(s => (s.Type &
+            (ShipTypes.AE | ShipTypes.CA | ShipTypes.CB | ShipTypes.CL | ShipTypes.DD)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(1, 1));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(1));
             addShip.ShowDialog();
         }
 
         private void btnVanFlt3_Click(object sender, EventArgs e)
         {
-            AddShip addShip = new AddShip(true);
+            AddShip addShip = new AddShip(new BindingList<Ship>(ships.Where(s => (s.Type &
+            (ShipTypes.AE | ShipTypes.CA | ShipTypes.CB | ShipTypes.CL | ShipTypes.DD)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(1, 2));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(1));
             addShip.ShowDialog();
         }
 
         private void btnSubFlt1_Click(object sender, EventArgs e)
         {
-            AddShip addShip = new AddShip(true);
+            AddShip addShip = new AddShip(new BindingList<Ship>(ships.Where(s => (s.Type &
+            (ShipTypes.SS | ShipTypes.SSV)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(2, 0));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(2));
             addShip.ShowDialog();
         }
 
         private void btnSubFlt2_Click(object sender, EventArgs e)
         {
-            AddShip addShip = new AddShip(true);
+            AddShip addShip = new AddShip(new BindingList<Ship>(ships.Where(s => (s.Type &
+            (ShipTypes.SS | ShipTypes.SSV)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(2, 1));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(2));
             addShip.ShowDialog();
         }
 
         private void btnSubFlt3_Click(object sender, EventArgs e)
         {
-            AddShip addShip = new AddShip(true);
+            AddShip addShip = new AddShip(new BindingList<Ship>(ships.Where(s => (s.Type &
+            (ShipTypes.SS | ShipTypes.SSV)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(2, 2));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(2));
             addShip.ShowDialog();
+        }
+
+        private void tlpOrders_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbxMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblMain.Text = stats[0, lbxMain.SelectedIndex].ToString();
+        }
+
+        private void lbxVan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblVan.Text = stats[1, lbxMain.SelectedIndex].ToString();
+        }
+
+        private void lbxSub_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblSub.Text = stats[2, lbxMain.SelectedIndex].ToString();
         }
     }
 }

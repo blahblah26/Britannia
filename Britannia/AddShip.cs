@@ -17,11 +17,12 @@ namespace Britannia
         public delegate void UpdateShipHandler(object sender, UpdateShipEventArgs e);
 
         public event UpdateShipHandler UpdateShip; 
-        public AddShip(bool useAvailable)
+        public AddShip(BindingList<Ship> source)
         {
             InitializeComponent();
+
+            lbxAddedShips.DataSource = source;
             
-            lbxAddedShips.DataSource = useAvailable ? Britannia.ships : Britannia.availableShips;
             lbxAddedShips.DisplayMember = "Name";
             lbxAddedShips.ValueMember = "ID";
         }
