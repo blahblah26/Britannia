@@ -22,8 +22,21 @@ namespace Britannia
         public static BindingList<Ship> ships;
         public static BindingList<Gear> gears;
         public static BindingList<Ship> availableShips;
-        public static Ship[,] fleets;
-        private int[,] stats;
+        public static Ship[][] fleets;
+        private int[][] stats;
+
+        private string cataloguePath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\catalogue.txt";
+        private string shipPath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\ships.txt";
+        private string gearPath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\gears.txt";
+        private string availablePath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\available.txt";
+        private string fleetPath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\fleets.txt";
+        private string statPath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\stats.txt";
+
+        private JsonSerializerOptions options = new JsonSerializerOptions
+        {
+            IncludeFields = true,
+            PropertyNameCaseInsensitive = true
+        };
 
         public Britannia()
         {
@@ -71,24 +84,12 @@ namespace Britannia
 
         private void dgvShips_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void Britannia_Load(object sender, EventArgs e)
         {
-            string cataloguePath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\catalogue.txt";
-            string shipPath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\ships.txt";
-            string gearPath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\gears.txt";
-            string availablePath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\available.txt";
-            string fleetPath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\fleets.txt";
-            string statPath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\stats.txt";
-
-            var options = new JsonSerializerOptions
-            {
-                IncludeFields = true,
-                PropertyNameCaseInsensitive = true
-            };
-
+            
             if (!File.Exists(cataloguePath))
             {
                 throw new FileNotFoundException("jag aelskar min flickvaen, ingen tid att hitta din fil");
@@ -167,18 +168,25 @@ namespace Britannia
                 string fleetJSON = File.ReadAllText(fleetPath);
                 try
                 {
-                    fleets = JsonSerializer.Deserialize<Ship[,]>(fleetJSON, options);
+                    fleets = JsonSerializer.Deserialize<Ship[][]>(fleetJSON, options);
                 }
                 catch (JsonException)
                 {
                     MessageBox.Show("json aer inte lika trevlig som min flickvaen", "Unable to read data",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    fleets = new Ship[3, 3];
+                    fleets = new Ship[3][];
+                    fleets[0] = new Ship[3];
+                    fleets[1] = new Ship[3];
+                    fleets[2] = new Ship[3];
+
                 }
             }
             else
             {
-                fleets = new Ship[3, 3];
+                fleets = new Ship[3][];
+                fleets[0] = new Ship[3];
+                fleets[1] = new Ship[3];
+                fleets[2] = new Ship[3];
             }
 
             if (File.Exists(statPath))
@@ -186,18 +194,25 @@ namespace Britannia
                 string statJSON = File.ReadAllText(statPath);
                 try
                 {
-                    stats = JsonSerializer.Deserialize<int[,]>(statJSON, options);
+                    stats = JsonSerializer.Deserialize<int[][]>(statJSON, options);
                 }
                 catch (JsonException)
                 {
                     MessageBox.Show("json aer inte lika trevlig som min flickvaen", "Unable to read data",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    stats = new int[3,6];
+                    stats = new int[3][];
+                    stats[0] = new int[6];
+                    stats[1] = new int[6];
+                    stats[2] = new int[6];
+
                 }
             }
             else
             {
-                stats = new int[3,6];
+                stats = new int[3][];
+                stats[0] = new int[6];
+                stats[1] = new int[6];
+                stats[2] = new int[6];
             }
 
             if (availableShips.Count == 0)
@@ -209,6 +224,22 @@ namespace Britannia
             lbxMain.SelectedIndex = 0;
             lbxVan.SelectedIndex = 0;
             lbxSub.SelectedIndex = 0;
+        }
+
+        private void Britannia_FormClosing(object sender, EventArgs e)
+        {
+            string tmp = JsonSerializer.Serialize(shipCatalogue, options);
+            File.WriteAllText(cataloguePath, tmp);
+            tmp = JsonSerializer.Serialize(ships, options);
+            File.WriteAllText(shipPath, tmp);
+            tmp = JsonSerializer.Serialize(gears, options);
+            File.WriteAllText(gearPath, tmp);
+            tmp = JsonSerializer.Serialize(availableShips, options);
+            File.WriteAllText(availablePath, tmp);
+            tmp = JsonSerializer.Serialize(fleets, options);
+            File.WriteAllText(fleetPath, tmp);
+            tmp = JsonSerializer.Serialize(stats, options);
+            File.WriteAllText(statPath, tmp);
         }
 
         private void btnMainFlt1_Click(object sender, EventArgs e)
@@ -224,24 +255,24 @@ namespace Britannia
         {
             return (object sender, UpdateShipEventArgs e) =>
             {
-                stats[fleet, 0] = 0;
-                stats[fleet, 1] = 0;
-                stats[fleet, 2] = 0;
-                stats[fleet, 3] = 0;
-                stats[fleet, 4] = 0;
+                stats[fleet][0] = 0;
+                stats[fleet][1] = 0;
+                stats[fleet][2] = 0;
+                stats[fleet][3] = 0;
+                stats[fleet][4] = 0;
                 for (int i = 0; i < 3; i++)
                 {
-                    if (fleets[fleet,i] != null) {
+                    if (fleets[fleet][i] != null) {
 
-                        stats[fleet, 0] += fleets[fleet, i].Firepower;
-                        stats[fleet, 1] += fleets[fleet, i].AirPower;
-                        stats[fleet, 2] += fleets[fleet, i].Torpedo;
-                        stats[fleet, 3] += fleets[fleet, i].Evasion;
-                        stats[fleet, 4] += fleets[fleet, i].Aa;
+                        stats[fleet][0] += fleets[fleet][i].Firepower;
+                        stats[fleet][1] += fleets[fleet][i].AirPower;
+                        stats[fleet][2] += fleets[fleet][i].Torpedo;
+                        stats[fleet][3] += fleets[fleet][i].Evasion;
+                        stats[fleet][4] += fleets[fleet][i].Aa;
 
                     }
                 }
-                stats[fleet, 5] = (int) Math.Round(Math.Pow(stats[fleet, 1] + stats[fleet, 3], 2.0 / 3.0));
+                stats[fleet][5] = (int) Math.Round(Math.Pow(stats[fleet][1] + stats[fleet][3], 2.0 / 3.0));
                 lbxVan_SelectedIndexChanged(sender, e);
                 lbxMain_SelectedIndexChanged(sender, e);
                 lbxSub_SelectedIndexChanged(sender, e);
@@ -255,20 +286,20 @@ namespace Britannia
                 {
                     for (int j = 0; j < 3; j++)
                     {
-                        if (!(i == fleet && j == idx) && e.getShip().Equals(fleets[i, j]))
+                        if (!(i == fleet && j == idx) && e.getShip().Equals(fleets[i][j]))
                         {
                             DialogResult yn = MessageBox.Show("jag aer upptagen just nu... vill du fortsaetta?", "Ship occupied",
                                 MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                             if (yn == DialogResult.Yes)
                             {
-                                fleets[fleet, idx] = e.getShip();
-                                fleets[i, j] = null;
+                                fleets[fleet][idx] = e.getShip();
+                                fleets[i][j] = null;
                             }
                             return;
                         }
                     }
                 }
-                fleets[fleet, idx] = e.getShip();
+                fleets[fleet][idx] = e.getShip();
                 
             };
         }
@@ -357,17 +388,17 @@ namespace Britannia
 
         private void lbxMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblMain.Text = stats[0, lbxMain.SelectedIndex].ToString();
+            lblMain.Text = stats[0][lbxMain.SelectedIndex].ToString();
         }
 
         private void lbxVan_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblVan.Text = stats[1, lbxVan.SelectedIndex].ToString();
+            lblVan.Text = stats[1][lbxVan.SelectedIndex].ToString();
         }
 
         private void lbxSub_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblSub.Text = stats[2, lbxSub.SelectedIndex].ToString();
+            lblSub.Text = stats[2][lbxSub.SelectedIndex].ToString();
         }
     }
 }

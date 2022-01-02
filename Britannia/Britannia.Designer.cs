@@ -29,6 +29,8 @@ namespace Britannia
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Britannia_FormClosing);
+
             this.lblShips = new System.Windows.Forms.Label();
             this.splShipGear = new System.Windows.Forms.SplitContainer();
             this.dgvShips = new System.Windows.Forms.DataGridView();
