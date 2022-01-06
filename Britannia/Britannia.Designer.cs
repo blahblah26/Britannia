@@ -29,20 +29,8 @@ namespace Britannia
         /// </summary>
         private void InitializeComponent()
         {
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Britannia_FormClosing);
-
-            this.lblShips = new System.Windows.Forms.Label();
-            this.splShipGear = new System.Windows.Forms.SplitContainer();
-            this.dgvShips = new System.Windows.Forms.DataGridView();
-            this.btnAddShip = new System.Windows.Forms.Button();
-            this.dgvGear = new System.Windows.Forms.DataGridView();
-            this.btnAddGear = new System.Windows.Forms.Button();
-            this.lblGear = new System.Windows.Forms.Label();
-            this.tclDockFleet = new System.Windows.Forms.TabControl();
-            this.tpgDryDock = new System.Windows.Forms.TabPage();
             this.tpgFleetOrders = new System.Windows.Forms.TabPage();
-            this.tpgOffice = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tlpOrders = new System.Windows.Forms.TableLayoutPanel();
             this.grpSubFlt = new System.Windows.Forms.GroupBox();
             this.tlpSubFlt = new System.Windows.Forms.TableLayoutPanel();
             this.btnSubFlt3 = new System.Windows.Forms.Button();
@@ -51,8 +39,12 @@ namespace Britannia
             this.picSubFlt3 = new System.Windows.Forms.PictureBox();
             this.picSubFlt2 = new System.Windows.Forms.PictureBox();
             this.picSubFlt1 = new System.Windows.Forms.PictureBox();
+            this.lbxSub = new System.Windows.Forms.ListBox();
+            this.lblSub = new System.Windows.Forms.Label();
             this.grpMainFlt = new System.Windows.Forms.GroupBox();
             this.tlpMainFlt = new System.Windows.Forms.TableLayoutPanel();
+            this.lblMain = new System.Windows.Forms.Label();
+            this.lbxMain = new System.Windows.Forms.ListBox();
             this.btnMainFlt3 = new System.Windows.Forms.Button();
             this.btnMainFlt2 = new System.Windows.Forms.Button();
             this.btnMainFlt1 = new System.Windows.Forms.Button();
@@ -67,23 +59,19 @@ namespace Britannia
             this.picVanFlt3 = new System.Windows.Forms.PictureBox();
             this.picVanFlt2 = new System.Windows.Forms.PictureBox();
             this.picVanFlt1 = new System.Windows.Forms.PictureBox();
-            this.tlpOrders = new System.Windows.Forms.TableLayoutPanel();
-            this.lbxMain = new System.Windows.Forms.ListBox();
-            this.lblMain = new System.Windows.Forms.Label();
             this.lbxVan = new System.Windows.Forms.ListBox();
             this.lblVan = new System.Windows.Forms.Label();
-            this.lbxSub = new System.Windows.Forms.ListBox();
-            this.lblSub = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.splShipGear)).BeginInit();
-            this.splShipGear.Panel1.SuspendLayout();
-            this.splShipGear.Panel2.SuspendLayout();
-            this.splShipGear.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShips)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGear)).BeginInit();
-            this.tclDockFleet.SuspendLayout();
-            this.tpgDryDock.SuspendLayout();
+            this.tpgDryDock = new System.Windows.Forms.TabPage();
+            this.splShipGear = new System.Windows.Forms.SplitContainer();
+            this.lblGear = new System.Windows.Forms.Label();
+            this.btnAddGear = new System.Windows.Forms.Button();
+            this.dgvGear = new System.Windows.Forms.DataGridView();
+            this.lblShips = new System.Windows.Forms.Label();
+            this.btnAddShip = new System.Windows.Forms.Button();
+            this.dgvShips = new System.Windows.Forms.DataGridView();
+            this.tclDockFleet = new System.Windows.Forms.TabControl();
             this.tpgFleetOrders.SuspendLayout();
-            this.tpgOffice.SuspendLayout();
+            this.tlpOrders.SuspendLayout();
             this.grpSubFlt.SuspendLayout();
             this.tlpSubFlt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSubFlt3)).BeginInit();
@@ -99,147 +87,15 @@ namespace Britannia
             ((System.ComponentModel.ISupportInitialize)(this.picVanFlt3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVanFlt2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVanFlt1)).BeginInit();
-            this.tlpOrders.SuspendLayout();
+            this.tpgDryDock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splShipGear)).BeginInit();
+            this.splShipGear.Panel1.SuspendLayout();
+            this.splShipGear.Panel2.SuspendLayout();
+            this.splShipGear.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShips)).BeginInit();
+            this.tclDockFleet.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblShips
-            // 
-            this.lblShips.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblShips.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblShips.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShips.Location = new System.Drawing.Point(10, 10);
-            this.lblShips.Margin = new System.Windows.Forms.Padding(0);
-            this.lblShips.Name = "lblShips";
-            this.lblShips.Size = new System.Drawing.Size(467, 35);
-            this.lblShips.TabIndex = 0;
-            this.lblShips.Text = "Ships";
-            this.lblShips.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // splShipGear
-            // 
-            this.splShipGear.BackColor = System.Drawing.Color.Transparent;
-            this.splShipGear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splShipGear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splShipGear.Location = new System.Drawing.Point(10, 10);
-            this.splShipGear.Name = "splShipGear";
-            // 
-            // splShipGear.Panel1
-            // 
-            this.splShipGear.Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.splShipGear.Panel1.Controls.Add(this.dgvShips);
-            this.splShipGear.Panel1.Controls.Add(this.btnAddShip);
-            this.splShipGear.Panel1.Controls.Add(this.lblShips);
-            this.splShipGear.Panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.splShipGear.Panel1MinSize = 150;
-            // 
-            // splShipGear.Panel2
-            // 
-            this.splShipGear.Panel2.BackColor = System.Drawing.Color.Transparent;
-            this.splShipGear.Panel2.Controls.Add(this.dgvGear);
-            this.splShipGear.Panel2.Controls.Add(this.btnAddGear);
-            this.splShipGear.Panel2.Controls.Add(this.lblGear);
-            this.splShipGear.Panel2.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.splShipGear.Panel2.Padding = new System.Windows.Forms.Padding(10);
-            this.splShipGear.Panel2MinSize = 150;
-            this.splShipGear.Size = new System.Drawing.Size(996, 578);
-            this.splShipGear.SplitterDistance = 489;
-            this.splShipGear.SplitterWidth = 3;
-            this.splShipGear.TabIndex = 3;
-            this.splShipGear.TabStop = false;
-            // 
-            // dgvShips
-            // 
-            this.dgvShips.AllowUserToAddRows = false;
-            this.dgvShips.AllowUserToDeleteRows = false;
-            this.dgvShips.AllowUserToOrderColumns = true;
-            this.dgvShips.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvShips.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvShips.Location = new System.Drawing.Point(10, 55);
-            this.dgvShips.Margin = new System.Windows.Forms.Padding(10);
-            this.dgvShips.Name = "dgvShips";
-            this.dgvShips.RowHeadersVisible = false;
-            this.dgvShips.Size = new System.Drawing.Size(467, 467);
-            this.dgvShips.TabIndex = 3;
-            this.dgvShips.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShips_CellContentClick);
-            // 
-            // btnAddShip
-            // 
-            this.btnAddShip.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnAddShip.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddShip.Location = new System.Drawing.Point(186, 532);
-            this.btnAddShip.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAddShip.Name = "btnAddShip";
-            this.btnAddShip.Size = new System.Drawing.Size(115, 35);
-            this.btnAddShip.TabIndex = 2;
-            this.btnAddShip.Text = "Add Ship";
-            this.btnAddShip.UseVisualStyleBackColor = true;
-            this.btnAddShip.Click += new System.EventHandler(this.btnAddShip_Click);
-            // 
-            // dgvGear
-            // 
-            this.dgvGear.AllowUserToAddRows = false;
-            this.dgvGear.AllowUserToDeleteRows = false;
-            this.dgvGear.AllowUserToOrderColumns = true;
-            this.dgvGear.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvGear.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGear.Location = new System.Drawing.Point(10, 55);
-            this.dgvGear.Margin = new System.Windows.Forms.Padding(10);
-            this.dgvGear.Name = "dgvGear";
-            this.dgvGear.Size = new System.Drawing.Size(496, 467);
-            this.dgvGear.TabIndex = 2;
-            // 
-            // btnAddGear
-            // 
-            this.btnAddGear.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnAddGear.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddGear.Location = new System.Drawing.Point(202, 532);
-            this.btnAddGear.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAddGear.Name = "btnAddGear";
-            this.btnAddGear.Size = new System.Drawing.Size(115, 35);
-            this.btnAddGear.TabIndex = 1;
-            this.btnAddGear.Text = "Add Gear";
-            this.btnAddGear.UseVisualStyleBackColor = true;
-            this.btnAddGear.Click += new System.EventHandler(this.btnAddGear_Click);
-            // 
-            // lblGear
-            // 
-            this.lblGear.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblGear.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGear.Location = new System.Drawing.Point(10, 10);
-            this.lblGear.Margin = new System.Windows.Forms.Padding(0);
-            this.lblGear.Name = "lblGear";
-            this.lblGear.Size = new System.Drawing.Size(482, 35);
-            this.lblGear.TabIndex = 0;
-            this.lblGear.Text = "Gear";
-            this.lblGear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tclDockFleet
-            // 
-            this.tclDockFleet.Controls.Add(this.tpgDryDock);
-            this.tclDockFleet.Controls.Add(this.tpgFleetOrders);
-            this.tclDockFleet.Controls.Add(this.tpgOffice);
-            this.tclDockFleet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tclDockFleet.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tclDockFleet.Location = new System.Drawing.Point(5, 5);
-            this.tclDockFleet.Name = "tclDockFleet";
-            this.tclDockFleet.SelectedIndex = 0;
-            this.tclDockFleet.Size = new System.Drawing.Size(1024, 631);
-            this.tclDockFleet.TabIndex = 4;
-            // 
-            // tpgDryDock
-            // 
-            this.tpgDryDock.Controls.Add(this.splShipGear);
-            this.tpgDryDock.Location = new System.Drawing.Point(4, 29);
-            this.tpgDryDock.Name = "tpgDryDock";
-            this.tpgDryDock.Padding = new System.Windows.Forms.Padding(10);
-            this.tpgDryDock.Size = new System.Drawing.Size(1016, 598);
-            this.tpgDryDock.TabIndex = 0;
-            this.tpgDryDock.Text = "Dry Dock";
-            this.tpgDryDock.UseVisualStyleBackColor = true;
             // 
             // tpgFleetOrders
             // 
@@ -252,27 +108,24 @@ namespace Britannia
             this.tpgFleetOrders.Text = "Fleet Orders";
             this.tpgFleetOrders.UseVisualStyleBackColor = true;
             // 
-            // tpgOffice
+            // tlpOrders
             // 
-            this.tpgOffice.Controls.Add(this.label1);
-            this.tpgOffice.Location = new System.Drawing.Point(4, 29);
-            this.tpgOffice.Name = "tpgOffice";
-            this.tpgOffice.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgOffice.Size = new System.Drawing.Size(1016, 598);
-            this.tpgOffice.TabIndex = 2;
-            this.tpgOffice.Text = "Office";
-            this.tpgOffice.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1010, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "GOOOOOOOOOOOOD SAAAAAAAAAAAAVE OUUUUUUUUUUR GRAAAAAAAAAAAAAAAAAAAAAAAAAACIOUS QUE" +
-    "EEEEEEEEEN";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.tlpOrders.ColumnCount = 1;
+            this.tlpOrders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpOrders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpOrders.Controls.Add(this.grpVan, 0, 1);
+            this.tlpOrders.Controls.Add(this.grpMainFlt, 0, 0);
+            this.tlpOrders.Controls.Add(this.grpSubFlt, 0, 2);
+            this.tlpOrders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpOrders.Location = new System.Drawing.Point(10, 10);
+            this.tlpOrders.Name = "tlpOrders";
+            this.tlpOrders.RowCount = 3;
+            this.tlpOrders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpOrders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpOrders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpOrders.Size = new System.Drawing.Size(996, 578);
+            this.tlpOrders.TabIndex = 4;
+            this.tlpOrders.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpOrders_Paint);
             // 
             // grpSubFlt
             // 
@@ -395,6 +248,36 @@ namespace Britannia
             this.picSubFlt1.TabIndex = 0;
             this.picSubFlt1.TabStop = false;
             // 
+            // lbxSub
+            // 
+            this.lbxSub.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbxSub.FormattingEnabled = true;
+            this.lbxSub.ItemHeight = 20;
+            this.lbxSub.Items.AddRange(new object[] {
+            "Firepower",
+            "Air Power",
+            "Torpedo",
+            "Evasion",
+            "AA",
+            "Recon"});
+            this.lbxSub.Location = new System.Drawing.Point(743, 5);
+            this.lbxSub.Margin = new System.Windows.Forms.Padding(5);
+            this.lbxSub.Name = "lbxSub";
+            this.lbxSub.Size = new System.Drawing.Size(238, 114);
+            this.lbxSub.TabIndex = 8;
+            this.lbxSub.SelectedIndexChanged += new System.EventHandler(this.lbxSub_SelectedIndexChanged);
+            // 
+            // lblSub
+            // 
+            this.lblSub.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSub.Location = new System.Drawing.Point(743, 129);
+            this.lblSub.Margin = new System.Windows.Forms.Padding(5);
+            this.lblSub.Name = "lblSub";
+            this.lblSub.Size = new System.Drawing.Size(238, 30);
+            this.lblSub.TabIndex = 9;
+            this.lblSub.Text = "0";
+            this.lblSub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // grpMainFlt
             // 
             this.grpMainFlt.BackColor = System.Drawing.Color.Transparent;
@@ -432,6 +315,36 @@ namespace Britannia
             this.tlpMainFlt.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpMainFlt.Size = new System.Drawing.Size(986, 162);
             this.tlpMainFlt.TabIndex = 0;
+            // 
+            // lblMain
+            // 
+            this.lblMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblMain.Location = new System.Drawing.Point(743, 127);
+            this.lblMain.Margin = new System.Windows.Forms.Padding(5);
+            this.lblMain.Name = "lblMain";
+            this.lblMain.Size = new System.Drawing.Size(238, 30);
+            this.lblMain.TabIndex = 7;
+            this.lblMain.Text = "0";
+            this.lblMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbxMain
+            // 
+            this.lbxMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbxMain.FormattingEnabled = true;
+            this.lbxMain.ItemHeight = 20;
+            this.lbxMain.Items.AddRange(new object[] {
+            "Firepower",
+            "Air Power",
+            "Torpedo",
+            "Evasion",
+            "AA",
+            "Recon"});
+            this.lbxMain.Location = new System.Drawing.Point(743, 5);
+            this.lbxMain.Margin = new System.Windows.Forms.Padding(5);
+            this.lbxMain.Name = "lbxMain";
+            this.lbxMain.Size = new System.Drawing.Size(238, 112);
+            this.lbxMain.TabIndex = 6;
+            this.lbxMain.SelectedIndexChanged += new System.EventHandler(this.lbxMain_SelectedIndexChanged);
             // 
             // btnMainFlt3
             // 
@@ -638,55 +551,6 @@ namespace Britannia
             this.picVanFlt1.TabIndex = 0;
             this.picVanFlt1.TabStop = false;
             // 
-            // tlpOrders
-            // 
-            this.tlpOrders.ColumnCount = 1;
-            this.tlpOrders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpOrders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpOrders.Controls.Add(this.grpVan, 0, 1);
-            this.tlpOrders.Controls.Add(this.grpMainFlt, 0, 0);
-            this.tlpOrders.Controls.Add(this.grpSubFlt, 0, 2);
-            this.tlpOrders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpOrders.Location = new System.Drawing.Point(10, 10);
-            this.tlpOrders.Name = "tlpOrders";
-            this.tlpOrders.RowCount = 3;
-            this.tlpOrders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpOrders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpOrders.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpOrders.Size = new System.Drawing.Size(996, 578);
-            this.tlpOrders.TabIndex = 4;
-            this.tlpOrders.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpOrders_Paint);
-            // 
-            // lbxMain
-            // 
-            this.lbxMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxMain.FormattingEnabled = true;
-            this.lbxMain.ItemHeight = 20;
-            this.lbxMain.Items.AddRange(new object[] {
-            "Firepower",
-            "Air Power",
-            "Torpedo",
-            "Evasion",
-            "AA",
-            "Recon"});
-            this.lbxMain.Location = new System.Drawing.Point(743, 5);
-            this.lbxMain.Margin = new System.Windows.Forms.Padding(5);
-            this.lbxMain.Name = "lbxMain";
-            this.lbxMain.Size = new System.Drawing.Size(238, 112);
-            this.lbxMain.TabIndex = 6;
-            this.lbxMain.SelectedIndexChanged += new System.EventHandler(this.lbxMain_SelectedIndexChanged);
-            // 
-            // lblMain
-            // 
-            this.lblMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMain.Location = new System.Drawing.Point(743, 127);
-            this.lblMain.Margin = new System.Windows.Forms.Padding(5);
-            this.lblMain.Name = "lblMain";
-            this.lblMain.Size = new System.Drawing.Size(238, 30);
-            this.lblMain.TabIndex = 7;
-            this.lblMain.Text = "0";
-            this.lblMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lbxVan
             // 
             this.lbxVan.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -717,35 +581,143 @@ namespace Britannia
             this.lblVan.Text = "0";
             this.lblVan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbxSub
+            // tpgDryDock
             // 
-            this.lbxSub.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbxSub.FormattingEnabled = true;
-            this.lbxSub.ItemHeight = 20;
-            this.lbxSub.Items.AddRange(new object[] {
-            "Firepower",
-            "Air Power",
-            "Torpedo",
-            "Evasion",
-            "AA",
-            "Recon"});
-            this.lbxSub.Location = new System.Drawing.Point(743, 5);
-            this.lbxSub.Margin = new System.Windows.Forms.Padding(5);
-            this.lbxSub.Name = "lbxSub";
-            this.lbxSub.Size = new System.Drawing.Size(238, 114);
-            this.lbxSub.TabIndex = 8;
-            this.lbxSub.SelectedIndexChanged += new System.EventHandler(this.lbxSub_SelectedIndexChanged);
+            this.tpgDryDock.Controls.Add(this.splShipGear);
+            this.tpgDryDock.Location = new System.Drawing.Point(4, 29);
+            this.tpgDryDock.Name = "tpgDryDock";
+            this.tpgDryDock.Padding = new System.Windows.Forms.Padding(10);
+            this.tpgDryDock.Size = new System.Drawing.Size(1016, 598);
+            this.tpgDryDock.TabIndex = 0;
+            this.tpgDryDock.Text = "Dry Dock";
+            this.tpgDryDock.UseVisualStyleBackColor = true;
             // 
-            // lblSub
+            // splShipGear
             // 
-            this.lblSub.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSub.Location = new System.Drawing.Point(743, 129);
-            this.lblSub.Margin = new System.Windows.Forms.Padding(5);
-            this.lblSub.Name = "lblSub";
-            this.lblSub.Size = new System.Drawing.Size(238, 30);
-            this.lblSub.TabIndex = 9;
-            this.lblSub.Text = "0";
-            this.lblSub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.splShipGear.BackColor = System.Drawing.Color.Transparent;
+            this.splShipGear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splShipGear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splShipGear.Location = new System.Drawing.Point(10, 10);
+            this.splShipGear.Name = "splShipGear";
+            // 
+            // splShipGear.Panel1
+            // 
+            this.splShipGear.Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.splShipGear.Panel1.Controls.Add(this.dgvShips);
+            this.splShipGear.Panel1.Controls.Add(this.btnAddShip);
+            this.splShipGear.Panel1.Controls.Add(this.lblShips);
+            this.splShipGear.Panel1.Padding = new System.Windows.Forms.Padding(10);
+            this.splShipGear.Panel1MinSize = 150;
+            // 
+            // splShipGear.Panel2
+            // 
+            this.splShipGear.Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.splShipGear.Panel2.Controls.Add(this.dgvGear);
+            this.splShipGear.Panel2.Controls.Add(this.btnAddGear);
+            this.splShipGear.Panel2.Controls.Add(this.lblGear);
+            this.splShipGear.Panel2.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.splShipGear.Panel2.Padding = new System.Windows.Forms.Padding(10);
+            this.splShipGear.Panel2MinSize = 150;
+            this.splShipGear.Size = new System.Drawing.Size(996, 578);
+            this.splShipGear.SplitterDistance = 489;
+            this.splShipGear.SplitterWidth = 3;
+            this.splShipGear.TabIndex = 3;
+            this.splShipGear.TabStop = false;
+            // 
+            // lblGear
+            // 
+            this.lblGear.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblGear.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGear.Location = new System.Drawing.Point(10, 10);
+            this.lblGear.Margin = new System.Windows.Forms.Padding(0);
+            this.lblGear.Name = "lblGear";
+            this.lblGear.Size = new System.Drawing.Size(482, 35);
+            this.lblGear.TabIndex = 0;
+            this.lblGear.Text = "Gear";
+            this.lblGear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnAddGear
+            // 
+            this.btnAddGear.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAddGear.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddGear.Location = new System.Drawing.Point(203, 532);
+            this.btnAddGear.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddGear.Name = "btnAddGear";
+            this.btnAddGear.Size = new System.Drawing.Size(115, 35);
+            this.btnAddGear.TabIndex = 1;
+            this.btnAddGear.Text = "Add Gear";
+            this.btnAddGear.UseVisualStyleBackColor = true;
+            this.btnAddGear.Click += new System.EventHandler(this.btnAddGear_Click);
+            // 
+            // dgvGear
+            // 
+            this.dgvGear.AllowUserToAddRows = false;
+            this.dgvGear.AllowUserToDeleteRows = false;
+            this.dgvGear.AllowUserToOrderColumns = true;
+            this.dgvGear.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvGear.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGear.Location = new System.Drawing.Point(10, 55);
+            this.dgvGear.Margin = new System.Windows.Forms.Padding(10);
+            this.dgvGear.Name = "dgvGear";
+            this.dgvGear.Size = new System.Drawing.Size(497, 467);
+            this.dgvGear.TabIndex = 2;
+            // 
+            // lblShips
+            // 
+            this.lblShips.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblShips.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblShips.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShips.Location = new System.Drawing.Point(10, 10);
+            this.lblShips.Margin = new System.Windows.Forms.Padding(0);
+            this.lblShips.Name = "lblShips";
+            this.lblShips.Size = new System.Drawing.Size(467, 35);
+            this.lblShips.TabIndex = 0;
+            this.lblShips.Text = "Ships";
+            this.lblShips.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnAddShip
+            // 
+            this.btnAddShip.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAddShip.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddShip.Location = new System.Drawing.Point(186, 532);
+            this.btnAddShip.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddShip.Name = "btnAddShip";
+            this.btnAddShip.Size = new System.Drawing.Size(115, 35);
+            this.btnAddShip.TabIndex = 2;
+            this.btnAddShip.Text = "Add Ship";
+            this.btnAddShip.UseVisualStyleBackColor = true;
+            this.btnAddShip.Click += new System.EventHandler(this.btnAddShip_Click);
+            // 
+            // dgvShips
+            // 
+            this.dgvShips.AllowUserToAddRows = false;
+            this.dgvShips.AllowUserToDeleteRows = false;
+            this.dgvShips.AllowUserToOrderColumns = true;
+            this.dgvShips.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvShips.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShips.Location = new System.Drawing.Point(10, 55);
+            this.dgvShips.Margin = new System.Windows.Forms.Padding(10);
+            this.dgvShips.Name = "dgvShips";
+            this.dgvShips.RowHeadersVisible = false;
+            this.dgvShips.Size = new System.Drawing.Size(467, 467);
+            this.dgvShips.TabIndex = 3;
+            this.dgvShips.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShips_CellContentClick);
+            // 
+            // tclDockFleet
+            // 
+            this.tclDockFleet.Controls.Add(this.tpgDryDock);
+            this.tclDockFleet.Controls.Add(this.tpgFleetOrders);
+            this.tclDockFleet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tclDockFleet.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tclDockFleet.Location = new System.Drawing.Point(5, 5);
+            this.tclDockFleet.Name = "tclDockFleet";
+            this.tclDockFleet.SelectedIndex = 0;
+            this.tclDockFleet.Size = new System.Drawing.Size(1024, 631);
+            this.tclDockFleet.TabIndex = 4;
             // 
             // Britannia
             // 
@@ -757,18 +729,10 @@ namespace Britannia
             this.Name = "Britannia";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Text = "Britannia";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Britannia_FormClosing);
             this.Load += new System.EventHandler(this.Britannia_Load);
-            this.splShipGear.Panel1.ResumeLayout(false);
-            this.splShipGear.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splShipGear)).EndInit();
-            this.splShipGear.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvShips)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGear)).EndInit();
-            this.tclDockFleet.ResumeLayout(false);
-            this.tpgDryDock.ResumeLayout(false);
             this.tpgFleetOrders.ResumeLayout(false);
-            this.tpgOffice.ResumeLayout(false);
-            this.tpgOffice.PerformLayout();
+            this.tlpOrders.ResumeLayout(false);
             this.grpSubFlt.ResumeLayout(false);
             this.tlpSubFlt.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picSubFlt3)).EndInit();
@@ -784,25 +748,21 @@ namespace Britannia
             ((System.ComponentModel.ISupportInitialize)(this.picVanFlt3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVanFlt2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picVanFlt1)).EndInit();
-            this.tlpOrders.ResumeLayout(false);
+            this.tpgDryDock.ResumeLayout(false);
+            this.splShipGear.Panel1.ResumeLayout(false);
+            this.splShipGear.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splShipGear)).EndInit();
+            this.splShipGear.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShips)).EndInit();
+            this.tclDockFleet.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblShips;
-        private System.Windows.Forms.SplitContainer splShipGear;
-        private System.Windows.Forms.TabControl tclDockFleet;
-        private System.Windows.Forms.TabPage tpgDryDock;
         private System.Windows.Forms.TabPage tpgFleetOrders;
-        private System.Windows.Forms.Label lblGear;
-        private System.Windows.Forms.Button btnAddShip;
-        private System.Windows.Forms.Button btnAddGear;
-        private System.Windows.Forms.TabPage tpgOffice;
-        private System.Windows.Forms.DataGridView dgvShips;
-        private System.Windows.Forms.DataGridView dgvGear;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tlpOrders;
         private System.Windows.Forms.GroupBox grpVan;
         private System.Windows.Forms.TableLayoutPanel tlpVanFlt;
@@ -834,6 +794,15 @@ namespace Britannia
         private System.Windows.Forms.Button btnSubFlt1;
         private System.Windows.Forms.Button btnSubFlt2;
         private System.Windows.Forms.Button btnSubFlt3;
+        private System.Windows.Forms.TabPage tpgDryDock;
+        private System.Windows.Forms.SplitContainer splShipGear;
+        private System.Windows.Forms.DataGridView dgvShips;
+        private System.Windows.Forms.Button btnAddShip;
+        private System.Windows.Forms.Label lblShips;
+        private System.Windows.Forms.DataGridView dgvGear;
+        private System.Windows.Forms.Button btnAddGear;
+        private System.Windows.Forms.Label lblGear;
+        private System.Windows.Forms.TabControl tclDockFleet;
     }
 }
 

@@ -25,17 +25,19 @@ namespace Britannia
         public static Ship[][] fleets;
         private int[][] stats;
 
-        private string cataloguePath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\catalogue.txt";
-        private string shipPath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\ships.txt";
-        private string gearPath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\gears.txt";
-        private string availablePath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\available.txt";
-        private string fleetPath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\fleets.txt";
-        private string statPath = @"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\stats.txt";
+        
+        private string cataloguePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\catalogue.txt";
+        private string shipPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ships.txt";
+        private string gearPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\gears.txt";
+        private string availablePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\available.txt";
+        private string fleetPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\fleets.txt";
+        private string statPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\stats.txt";
 
         private JsonSerializerOptions options = new JsonSerializerOptions
         {
             IncludeFields = true,
             PropertyNameCaseInsensitive = true
+            //yeet
         };
 
         public Britannia()
@@ -377,11 +379,6 @@ namespace Britannia
         }
 
         private void tlpOrders_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
         {
 
         }
