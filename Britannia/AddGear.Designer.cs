@@ -64,8 +64,8 @@ namespace Britannia
             // 
             // lbxAddedShips
             // 
-            this.lbxAddedShips.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.lbxAddedShips.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbxAddedShips.FormattingEnabled = true;
             this.lbxAddedShips.ItemHeight = 20;
@@ -78,7 +78,7 @@ namespace Britannia
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Britannia.Properties.Resources._96px_Unknown_Ships;
             this.pictureBox1.Location = new System.Drawing.Point(10, 12);
@@ -89,7 +89,7 @@ namespace Britannia
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // uwu1
+            // AddGear
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -99,8 +99,9 @@ namespace Britannia
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(300, 350);
-            this.Name = "uwu1";
+            this.Name = "AddGear";
             this.Text = "Add Ship";
+            this.Load += new System.EventHandler(this.AddGear_Load);
             this.pnlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

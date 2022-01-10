@@ -14,9 +14,9 @@ namespace Britannia
 {
     public partial class AddGear : Form
     {
-        public delegate void UpdateShipHandler(object sender, UpdateShipEventArgs e);
+        public delegate void UpdateGearHandler(object sender, UpdateGearEventArgs e);
 
-        public event UpdateShipHandler UpdateShip;
+        public event UpdateGearHandler UpdateShip;
         public AddGear(BindingList<Ship> source)
         {
             InitializeComponent();
@@ -34,13 +34,18 @@ namespace Britannia
                 this.Dispose();
                 return;
             }
-            UpdateShipEventArgs args = new UpdateShipEventArgs(Britannia.shipCatalogue.Find(s =>
-                s.ID == lbxAddedShips.SelectedValue.ToString()));
+            UpdateGearEventArgs args = new UpdateGearEventArgs(Britannia.gearCatalogue.Find(g =>
+                g.ID == lbxAddedShips.SelectedValue.ToString()));
             UpdateShip(this, args);
 
             this.Dispose();
         }
         private void lbxAddedShips_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddGear_Load(object sender, EventArgs e)
         {
 
         }
