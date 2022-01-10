@@ -18,15 +18,18 @@ namespace Britannia
 {
     public partial class Britannia : Form
     {
+        // comment
         public static ImmutableList<Ship> shipCatalogue;
+        public static ImmutableList<Gear> gearCatalogue;
         public static BindingList<Ship> ships;
         public static BindingList<Gear> gears;
         public static BindingList<Ship> availableShips;
         public static Ship[][] fleets;
         private int[][] stats;
-
+        
         
         private string cataloguePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\catalogue.txt";
+        private string gCataloguePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\gcatalogue.txt";
         private string shipPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ships.txt";
         private string gearPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\gears.txt";
         private string availablePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\available.txt";
@@ -42,7 +45,9 @@ namespace Britannia
 
         public Britannia()
         {
+            // initialize components
             InitializeComponent();
+            // imayine
         }
 
         private void btnAddShip_Click(object sender, EventArgs e)
@@ -86,7 +91,8 @@ namespace Britannia
 
         private void dgvShips_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            // aya am ded uwu
+            // babus
         }
 
         private void Britannia_Load(object sender, EventArgs e)
@@ -108,6 +114,24 @@ namespace Britannia
                 this.Dispose();
                 return;
             }
+            /*
+            if (!File.Exists(gCataloguePath))
+            {
+                throw new FileNotFoundException("jag aelskar min flickvaen, ingen tid att hitta din fil");
+            }
+            string gCatalogueJSON = File.ReadAllText(gCataloguePath);
+            try
+            {
+                gearCatalogue = JsonSerializer.Deserialize<ImmutableList<Gear>>(gCatalogueJSON, options);
+            }
+            catch
+            {
+                MessageBox.Show("json aer inte lika trevlig som min flickvaen", "Unable to read data",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Dispose();
+                return;
+            }
+            */
             if (File.Exists(shipPath))
             {
                 string shipJSON = File.ReadAllText(shipPath);
@@ -117,7 +141,7 @@ namespace Britannia
                 }
                 catch (JsonException)
                 {
-                    MessageBox.Show("json aer inte lika trevlig som min flickvaen", "Unable to read data",
+                    MessageBox.Show("json aer inte lika trevlig som min flickvaen", "Unable to weed data",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     ships = new BindingList<Ship>();
                 }
