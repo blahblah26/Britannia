@@ -28,15 +28,13 @@ namespace Britannia.Objects
         Cargo    = 0b_0001_0000_0000_0000,
         ASWGear  = 0b_0010_0000_0000_0000
     }
-    public abstract class Gear
+    public class Gear
     {
         private readonly string _name;
         private readonly string _id;
         private readonly int _rarity;
-
         private readonly ArmorType _armor;
         private readonly int _speed;
-        private readonly bool _beaverTag;
         private readonly int _oxygen;
         private readonly int _ammo;
         private readonly int _health;
@@ -49,9 +47,6 @@ namespace Britannia.Objects
         private readonly int _reload;
         private readonly int _asw;
         private readonly int _accuracy;
-        private readonly ShipTypes _equipShipTypes;
-        private readonly string _canEquipNames;
-        private readonly string _noEquipNames;
 
         public string Name => _name;
 
@@ -62,8 +57,6 @@ namespace Britannia.Objects
         public ArmorType Armor => _armor;
 
         public int Speed => _speed;
-
-        public bool BeaverTag => _beaverTag;
 
         public int Oxygen => _oxygen;
 
@@ -89,10 +82,5 @@ namespace Britannia.Objects
 
         public int Accuracy => _accuracy;
 
-        public ShipTypes EquipShipTypes => _equipShipTypes;
-
-        public string CanEquipNames => _canEquipNames;
-
-        public string NoEquipNames => _noEquipNames;
     }
 }

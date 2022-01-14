@@ -2,6 +2,7 @@
 using Britannia.Objects;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -16,8 +17,8 @@ namespace Britannia
     {
         public delegate void UpdateGearHandler(object sender, UpdateGearEventArgs e);
 
-        public event UpdateGearHandler UpdateShip;
-        public AddGear(BindingList<Ship> source)
+        public event UpdateGearHandler UpdateGear;
+        public AddGear(ImmutableList<Gear> source)
         {
             InitializeComponent();
 
@@ -36,7 +37,7 @@ namespace Britannia
             }
             UpdateGearEventArgs args = new UpdateGearEventArgs(Britannia.gearCatalogue.Find(g =>
                 g.ID == lbxAddedShips.SelectedValue.ToString()));
-            UpdateShip(this, args);
+            UpdateGear(this, args);
 
             this.Dispose();
         }

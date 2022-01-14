@@ -92,7 +92,7 @@
     <Compile Include="AddShip.Designer.cs">
       <DependentUpon>AddShip.cs</DependentUpon>
     </Compile>
-    <Compile Include="Events\Class1.cs" />
+    <Compile Include="Events\UpdateGearEventArgs.cs" />
     <Compile Include="Events\UpdateShipEventArgs.cs" />
     <Compile Include="Objects\Ship.cs" />
     <Compile Include="Objects\Gear.cs" />

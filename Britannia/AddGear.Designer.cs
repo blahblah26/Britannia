@@ -46,7 +46,7 @@ namespace Britannia
             this.btnAddShip.Name = "btnAddShip";
             this.btnAddShip.Size = new System.Drawing.Size(115, 35);
             this.btnAddShip.TabIndex = 0;
-            this.btnAddShip.Text = "Add Ship";
+            this.btnAddShip.Text = "Add Gear";
             this.btnAddShip.UseVisualStyleBackColor = true;
             this.btnAddShip.Click += new System.EventHandler(this.btnAddShip_Click);
             // 
@@ -100,7 +100,7 @@ namespace Britannia
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(300, 350);
             this.Name = "AddGear";
-            this.Text = "Add Ship";
+            this.Text = "Add Gear";
             this.Load += new System.EventHandler(this.AddGear_Load);
             this.pnlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

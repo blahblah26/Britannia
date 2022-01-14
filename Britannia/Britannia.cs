@@ -85,14 +85,25 @@ namespace Britannia
 
         private void btnAddGear_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Thish shectiawn washn't impwwemented nyeet~\r\n" +
-                "pwweashe be pwatient nyaa~");
+            AddGear addGear = new AddGear(gearCatalogue);
+            addGear.UpdateGear += new AddGear.UpdateGearHandler(updateGear);
+            addGear.ShowDialog();
+
+            //MessageBox.Show("Thish shectiawn washn't impwwemented nyeet~\r\npwweashe be pwatient nyaa~");
+        }
+
+        private void updateGear(object sender, UpdateGearEventArgs e)
+        {
+            if (!gears.Contains(e.getGear()))
+            {
+                gears.Add(e.getGear());
+            }
         }
 
         private void dgvShips_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // aya am ded uwu
-            // babus
+            // --babus
         }
 
         private void Britannia_Load(object sender, EventArgs e)
@@ -131,6 +142,8 @@ namespace Britannia
                 this.Dispose();
                 return;
             }
+
+            // Good code
             */
             if (File.Exists(shipPath))
             {
