@@ -94,9 +94,9 @@
     </Compile>
     <Compile Include="Events\UpdateGearEventArgs.cs" />
     <Compile Include="Events\UpdateShipEventArgs.cs" />
+    <Compile Include="Objects\SortableBL.cs" />
     <Compile Include="Objects\Ship.cs" />
     <Compile Include="Objects\Gear.cs" />
-    <Compile Include="Objects\Meowfficer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\tmp.cs" />

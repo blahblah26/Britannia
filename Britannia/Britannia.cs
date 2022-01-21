@@ -18,16 +18,16 @@ namespace Britannia
 {
     public partial class Britannia : Form
     {
-        // comment
+        // when the im PASTA is SUS!
         public static ImmutableList<Ship> shipCatalogue;
         public static ImmutableList<Gear> gearCatalogue;
-        public static BindingList<Ship> ships;
-        public static BindingList<Gear> gears;
+        public static SortableBL<Ship> ships;
+        public static SortableBL<Gear> gears;
         public static BindingList<Ship> availableShips;
         public static Ship[][] fleets;
-        private int[][] stats;
+        private int[][] stats; // AP stats
         
-        
+        // op
         private string cataloguePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\catalogue.txt";
         private string gCataloguePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\gcatalogue.txt";
         private string shipPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ships.txt";
@@ -40,9 +40,9 @@ namespace Britannia
         {
             IncludeFields = true,
             PropertyNameCaseInsensitive = true
-            //yeet
+            // yeet
         };
-
+        
         public Britannia()
         {
             // initialize components
@@ -150,18 +150,18 @@ namespace Britannia
                 string shipJSON = File.ReadAllText(shipPath);
                 try
                 {
-                    ships = JsonSerializer.Deserialize<BindingList<Ship>>(shipJSON, options);
+                    ships = JsonSerializer.Deserialize<SortableBL<Ship>>(shipJSON, options);
                 }
                 catch (JsonException)
                 {
                     MessageBox.Show("json aer inte lika trevlig som min flickvaen", "Unable to weed data",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    ships = new BindingList<Ship>();
+                    ships = new SortableBL<Ship>();
                 }
             }
             else
             {
-                ships = new BindingList<Ship>();
+                ships = new SortableBL<Ship>();
             }
 
             if (File.Exists(gearPath))
@@ -169,18 +169,18 @@ namespace Britannia
                 string gearJSON = File.ReadAllText(gearPath);
                 try
                 {
-                    gears = JsonSerializer.Deserialize<BindingList<Gear>>(gearJSON, options);
+                    gears = JsonSerializer.Deserialize<SortableBL<Gear>>(gearJSON, options);
                 }
                 catch (JsonException)
                 {
                     MessageBox.Show("json aer inte lika trevlig som min flickvaen", "Unable to read data",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    gears = new BindingList<Gear>();
+                    gears = new SortableBL<Gear>();
                 }
             }
             else
             {
-                gears = new BindingList<Gear>();
+                gears = new SortableBL<Gear>();
             }
 
             if (File.Exists(availablePath))
@@ -417,7 +417,7 @@ namespace Britannia
 
         private void tlpOrders_Paint(object sender, PaintEventArgs e)
         {
-
+            // sus!!!!!
         }
 
         private void lbxMain_SelectedIndexChanged(object sender, EventArgs e)

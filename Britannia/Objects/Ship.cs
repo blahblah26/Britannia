@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace Britannia.Objects
 {
+
+    // :O
     [Flags]
     public enum ShipTypes
     {
