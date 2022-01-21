@@ -153,7 +153,7 @@ namespace Britannia.Objects
 
         public int Firepower => _firepower;
 
-        public int Aa => _aa;
+        public int AA => _aa;
 
         public int Torpedo => _torpedo;
 
@@ -165,7 +165,7 @@ namespace Britannia.Objects
 
         public int Reload => _reload;
 
-        public int Asw => _asw;
+        public int ASW => _asw;
 
         public int Accuracy => _accuracy;
 
@@ -225,13 +225,13 @@ namespace Britannia.Objects
                    Slot3 == ship.Slot3 &&
                    Health == ship.Health &&
                    Firepower == ship.Firepower &&
-                   Aa == ship.Aa &&
+                   AA == ship.AA &&
                    Torpedo == ship.Torpedo &&
                    Evasion == ship.Evasion &&
                    AirPower == ship.AirPower &&
                    Oil == ship.Oil &&
                    Reload == ship.Reload &&
-                   Asw == ship.Asw &&
+                   ASW == ship.ASW &&
                    Accuracy == ship.Accuracy &&
                    EfficiencySlot1 == ship.EfficiencySlot1 &&
                    EfficiencySlot2 == ship.EfficiencySlot2 &&

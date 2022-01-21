@@ -39,7 +39,7 @@ namespace Britannia.Utils
 
             List<Ship> help = new List<Ship>();
             string tmp = JsonSerializer.Serialize(bruh, options);
-            File.WriteAllText(@"C:\Users\Melly\source\repos\Britannia\Britannia\Utils\ships.txt", tmp);
+            File.WriteAllText(@"", tmp);
         }
     }
 }

@@ -47,6 +47,10 @@ namespace Britannia
         {
             // initialize components
             InitializeComponent();
+            dgvGear.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvShips.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            
+
             // imayine
         }
 
@@ -263,6 +267,10 @@ namespace Britannia
             lbxMain.SelectedIndex = 0;
             lbxVan.SelectedIndex = 0;
             lbxSub.SelectedIndex = 0;
+
+            dgvShips.Columns[10].Name = "Slot 1";
+            dgvShips.Columns[11].Name = "Slot 2";
+            dgvShips.Columns[12].Name = "Slot 3";
         }
 
         private void Britannia_FormClosing(object sender, EventArgs e)
@@ -307,7 +315,7 @@ namespace Britannia
                         stats[fleet][1] += fleets[fleet][i].AirPower;
                         stats[fleet][2] += fleets[fleet][i].Torpedo;
                         stats[fleet][3] += fleets[fleet][i].Evasion;
-                        stats[fleet][4] += fleets[fleet][i].Aa;
+                        stats[fleet][4] += fleets[fleet][i].AA;
 
                     }
                 }
