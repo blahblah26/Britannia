@@ -70,6 +70,8 @@ namespace Britannia
             this.btnAddGear = new System.Windows.Forms.Button();
             this.lblGear = new System.Windows.Forms.Label();
             this.tclDockFleet = new System.Windows.Forms.TabControl();
+            this.txtShipSearch = new System.Windows.Forms.TextBox();
+            this.txtGearSearch = new System.Windows.Forms.TextBox();
             this.tpgFleetOrders.SuspendLayout();
             this.tlpOrders.SuspendLayout();
             this.grpVan.SuspendLayout();
@@ -603,6 +605,7 @@ namespace Britannia
             // splShipGear.Panel1
             // 
             this.splShipGear.Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.splShipGear.Panel1.Controls.Add(this.txtShipSearch);
             this.splShipGear.Panel1.Controls.Add(this.dgvShips);
             this.splShipGear.Panel1.Controls.Add(this.btnAddShip);
             this.splShipGear.Panel1.Controls.Add(this.lblShips);
@@ -612,6 +615,7 @@ namespace Britannia
             // splShipGear.Panel2
             // 
             this.splShipGear.Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.splShipGear.Panel2.Controls.Add(this.txtGearSearch);
             this.splShipGear.Panel2.Controls.Add(this.dgvGear);
             this.splShipGear.Panel2.Controls.Add(this.btnAddGear);
             this.splShipGear.Panel2.Controls.Add(this.lblGear);
@@ -633,11 +637,11 @@ namespace Britannia
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvShips.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvShips.Location = new System.Drawing.Point(10, 55);
+            this.dgvShips.Location = new System.Drawing.Point(10, 95);
             this.dgvShips.Margin = new System.Windows.Forms.Padding(10);
             this.dgvShips.Name = "dgvShips";
             this.dgvShips.RowHeadersVisible = false;
-            this.dgvShips.Size = new System.Drawing.Size(467, 467);
+            this.dgvShips.Size = new System.Drawing.Size(467, 427);
             this.dgvShips.TabIndex = 3;
             this.dgvShips.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShips_CellContentClick);
             // 
@@ -676,18 +680,18 @@ namespace Britannia
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGear.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGear.Location = new System.Drawing.Point(10, 55);
+            this.dgvGear.Location = new System.Drawing.Point(10, 95);
             this.dgvGear.Margin = new System.Windows.Forms.Padding(10);
             this.dgvGear.Name = "dgvGear";
             this.dgvGear.RowHeadersVisible = false;
-            this.dgvGear.Size = new System.Drawing.Size(498, 467);
+            this.dgvGear.Size = new System.Drawing.Size(482, 427);
             this.dgvGear.TabIndex = 2;
             // 
             // btnAddGear
             // 
             this.btnAddGear.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAddGear.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddGear.Location = new System.Drawing.Point(204, 532);
+            this.btnAddGear.Location = new System.Drawing.Point(205, 532);
             this.btnAddGear.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddGear.Name = "btnAddGear";
             this.btnAddGear.Size = new System.Drawing.Size(115, 35);
@@ -720,6 +724,28 @@ namespace Britannia
             this.tclDockFleet.Size = new System.Drawing.Size(1024, 631);
             this.tclDockFleet.TabIndex = 4;
             // 
+            // txtShipSearch
+            // 
+            this.txtShipSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtShipSearch.Location = new System.Drawing.Point(10, 55);
+            this.txtShipSearch.Margin = new System.Windows.Forms.Padding(10);
+            this.txtShipSearch.Name = "txtShipSearch";
+            this.txtShipSearch.Size = new System.Drawing.Size(467, 27);
+            this.txtShipSearch.TabIndex = 4;
+            // 
+            // txtGearSearch
+            // 
+            this.txtGearSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtGearSearch.Location = new System.Drawing.Point(10, 55);
+            this.txtGearSearch.Margin = new System.Windows.Forms.Padding(10);
+            this.txtGearSearch.Name = "txtGearSearch";
+            this.txtGearSearch.Size = new System.Drawing.Size(482, 27);
+            this.txtGearSearch.TabIndex = 3;
+            // 
             // Britannia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -751,7 +777,9 @@ namespace Britannia
             ((System.ComponentModel.ISupportInitialize)(this.picSubFlt3)).EndInit();
             this.tpgDryDock.ResumeLayout(false);
             this.splShipGear.Panel1.ResumeLayout(false);
+            this.splShipGear.Panel1.PerformLayout();
             this.splShipGear.Panel2.ResumeLayout(false);
+            this.splShipGear.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splShipGear)).EndInit();
             this.splShipGear.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvShips)).EndInit();
@@ -804,6 +832,8 @@ namespace Britannia
         private System.Windows.Forms.Button btnAddGear;
         private System.Windows.Forms.Label lblGear;
         private System.Windows.Forms.TabControl tclDockFleet;
+        private System.Windows.Forms.TextBox txtShipSearch;
+        private System.Windows.Forms.TextBox txtGearSearch;
     }
 }
 
