@@ -42,7 +42,17 @@ namespace Britannia
         }
         private void lbxAddedShips_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (Britannia.shipCatalogue.Find(s => s.ID == lbxAddedShips.SelectedValue.ToString()) == null)
+            {
+                return;
+            }
+            try
+            {
+                picShip.ImageLocation = Britannia.shipCatalogue.Find(s => s.ID == lbxAddedShips.SelectedValue.ToString()).Image;
+            } catch
+            {
+                picShip.Image = picShip.ErrorImage;
+            }
         }
     }
 }

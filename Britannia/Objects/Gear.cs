@@ -47,6 +47,7 @@ namespace Britannia.Objects
         private readonly int _reload;
         private readonly int _asw;
         private readonly int _accuracy;
+        private readonly string _image;
 
         public string Name => _name;
 
@@ -81,6 +82,8 @@ namespace Britannia.Objects
         public int ASW => _asw;
 
         public int Accuracy => _accuracy;
+
+        public string Image => _image;
 
     }
 }

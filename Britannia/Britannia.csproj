@@ -146,9 +146,6 @@
   <ItemGroup>
     <None Include="Resources\96px-Unknown_Ships.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Utils\catalogue.txt" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

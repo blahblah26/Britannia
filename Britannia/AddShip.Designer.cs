@@ -32,9 +32,9 @@ namespace Britannia
             this.btnAddShip = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.lbxAddedShips = new System.Windows.Forms.ListBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picShip = new System.Windows.Forms.PictureBox();
             this.pnlMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShip)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddShip
@@ -53,7 +53,7 @@ namespace Britannia
             // pnlMain
             // 
             this.pnlMain.Controls.Add(this.lbxAddedShips);
-            this.pnlMain.Controls.Add(this.pictureBox1);
+            this.pnlMain.Controls.Add(this.picShip);
             this.pnlMain.Controls.Add(this.btnAddShip);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
@@ -76,18 +76,18 @@ namespace Britannia
             this.lbxAddedShips.TabIndex = 3;
             this.lbxAddedShips.SelectedIndexChanged += new System.EventHandler(this.lbxAddedShips_SelectedIndexChanged);
             // 
-            // pictureBox1
+            // picShip
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.picShip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Britannia.Properties.Resources._96px_Unknown_Ships;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(264, 162);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.picShip.Image = global::Britannia.Properties.Resources._96px_Unknown_Ships;
+            this.picShip.Location = new System.Drawing.Point(10, 12);
+            this.picShip.Margin = new System.Windows.Forms.Padding(10, 10, 10, 5);
+            this.picShip.Name = "picShip";
+            this.picShip.Size = new System.Drawing.Size(264, 162);
+            this.picShip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picShip.TabIndex = 2;
+            this.picShip.TabStop = false;
             // 
             // AddShip
             // 
@@ -102,7 +102,7 @@ namespace Britannia
             this.Name = "AddShip";
             this.Text = "Add Ship";
             this.pnlMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShip)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -111,7 +111,7 @@ namespace Britannia
 
         private System.Windows.Forms.Button btnAddShip;
         private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picShip;
         private System.Windows.Forms.ListBox lbxAddedShips;
     }
 }

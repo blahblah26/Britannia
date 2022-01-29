@@ -67,8 +67,9 @@ namespace Britannia
             if (!ships.Contains(e.getShip()))
             {
                 ships.Add(e.getShip());
+                
                 //MessageBox.Show("Added " + e.getShip().ToString());
-                BindingList<Ship> tmp = new BindingList<Ship>();
+                SortableBL<Ship> tmp = new SortableBL<Ship>();
                 foreach (Ship s in availableShips)
                 {
                     if (!s.Equals(e.getShip()))
@@ -294,8 +295,114 @@ namespace Britannia
             AddShip addShip = new AddShip(new BindingList<Ship>(ships.Where(s => (s.Type &
             (ShipTypes.AR | ShipTypes.BB | ShipTypes.BC | ShipTypes.BBV | ShipTypes.BM | ShipTypes.CV | ShipTypes.CVL)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(0, 0));
+            
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(0));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetPics);
             addShip.ShowDialog();
+            
+        }
+
+        private void updateFleetPics(object sender, UpdateShipEventArgs e)
+        {
+            if (fleets[0][0] != null)
+            {
+                try
+                {
+                    picMainFlt1.ImageLocation = fleets[0][0].Image;
+                } catch
+                {
+                    picMainFlt1.Image = picMainFlt1.ErrorImage;
+                }
+            }
+            if (fleets[0][1] != null)
+            {
+                try
+                {
+                    picMainFlt2.ImageLocation = fleets[0][1].Image;
+                }
+                catch
+                {
+                    picMainFlt2.Image = picMainFlt2.ErrorImage;
+                }
+            }
+            if (fleets[0][2] != null)
+            {
+                try
+                {
+                    picMainFlt3.ImageLocation = fleets[0][2].Image;
+                }
+                catch
+                {
+                    picMainFlt3.Image = picMainFlt3.ErrorImage;
+                }
+            }
+            if (fleets[1][0] != null)
+            {
+                try
+                {
+                    picVanFlt1.ImageLocation = fleets[1][0].Image;
+                }
+                catch
+                {
+                    picVanFlt1.Image = picVanFlt1.ErrorImage;
+                }
+            }
+            if (fleets[1][1] != null)
+            {
+                try
+                {
+                    picVanFlt2.ImageLocation = fleets[1][1].Image;
+                }
+                catch
+                {
+                    picVanFlt2.Image = picVanFlt2.ErrorImage;
+                }
+            }
+            if (fleets[1][2] != null)
+            {
+                try
+                {
+                    picVanFlt3.ImageLocation = fleets[1][2].Image;
+                }
+                catch
+                {
+                    picVanFlt3.Image = picVanFlt3.ErrorImage;
+                }
+            }
+            if (fleets[2][0] != null)
+            {
+                try
+                {
+                    picSubFlt1.ImageLocation = fleets[2][0].Image;
+                }
+                catch
+                {
+                    picSubFlt1.Image = picSubFlt1.ErrorImage;
+                }
+            }
+            if (fleets[2][1] != null)
+            {
+                try
+                {
+                    picSubFlt2.ImageLocation = fleets[2][1].Image;
+                }
+                catch
+                {
+                    picSubFlt2.Image = picSubFlt2.ErrorImage;
+                }
+            }
+            if (fleets[2][2] != null)
+            {
+                try
+                {
+                    picSubFlt3.ImageLocation = fleets[2][2].Image;
+                }
+                catch
+                {
+                    picSubFlt3.Image = picSubFlt3.ErrorImage;
+                }
+            }
+
         }
 
         private Action<object, UpdateShipEventArgs> updateFleetData(int fleet)
@@ -357,6 +464,7 @@ namespace Britannia
             (ShipTypes.AR | ShipTypes.BB | ShipTypes.BC | ShipTypes.BBV | ShipTypes.BM | ShipTypes.CV | ShipTypes.CVL)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(0, 1));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(0));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetPics);
             addShip.ShowDialog();
         }
 
@@ -366,6 +474,7 @@ namespace Britannia
             (ShipTypes.AR | ShipTypes.BB | ShipTypes.BC | ShipTypes.BBV | ShipTypes.BM | ShipTypes.CV | ShipTypes.CVL)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(0, 2));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(0));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetPics);
             addShip.ShowDialog();
         }
 
@@ -375,6 +484,7 @@ namespace Britannia
             (ShipTypes.AE | ShipTypes.CA | ShipTypes.CB | ShipTypes.CL | ShipTypes.DD)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(1, 0));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(1));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetPics);
             addShip.ShowDialog();
         }
 
@@ -384,6 +494,7 @@ namespace Britannia
             (ShipTypes.AE | ShipTypes.CA | ShipTypes.CB | ShipTypes.CL | ShipTypes.DD)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(1, 1));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(1));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetPics);
             addShip.ShowDialog();
         }
 
@@ -393,6 +504,7 @@ namespace Britannia
             (ShipTypes.AE | ShipTypes.CA | ShipTypes.CB | ShipTypes.CL | ShipTypes.DD)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(1, 2));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(1));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetPics);
             addShip.ShowDialog();
         }
 
@@ -402,6 +514,7 @@ namespace Britannia
             (ShipTypes.SS | ShipTypes.SSV)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(2, 0));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(2));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetPics);
             addShip.ShowDialog();
         }
 
@@ -411,6 +524,7 @@ namespace Britannia
             (ShipTypes.SS | ShipTypes.SSV)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(2, 1));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(2));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetPics);
             addShip.ShowDialog();
         }
 
@@ -420,6 +534,7 @@ namespace Britannia
             (ShipTypes.SS | ShipTypes.SSV)) != ShipTypes.NA).ToList()));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleets(2, 2));
             addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetData(2));
+            addShip.UpdateShip += new AddShip.UpdateShipHandler(updateFleetPics);
             addShip.ShowDialog();
         }
 

@@ -145,5 +145,6 @@ public class SortableBL<T> : BindingList<T>
     protected override void OnListChanged(ListChangedEventArgs e)
     {
         originalList = base.Items.ToList();
+        base.OnListChanged(e);
     }
 }
