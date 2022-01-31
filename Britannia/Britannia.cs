@@ -47,8 +47,7 @@ namespace Britannia
         {
             // initialize components
             InitializeComponent();
-            dgvGear.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dgvShips.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+           
             
 
             // imayine
@@ -111,9 +110,14 @@ namespace Britannia
             // --babus
         }
 
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wp, IntPtr lp);
+
         private void Britannia_Load(object sender, EventArgs e)
         {
-            
+            dgvGear.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvShips.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
             if (!File.Exists(cataloguePath))
             {
                 throw new FileNotFoundException("jag aelskar min flickvaen, ingen tid att hitta din fil");
@@ -269,9 +273,43 @@ namespace Britannia
             lbxVan.SelectedIndex = 0;
             lbxSub.SelectedIndex = 0;
 
-            dgvShips.Columns[10].Name = "Slot 1";
-            dgvShips.Columns[11].Name = "Slot 2";
-            dgvShips.Columns[12].Name = "Slot 3";
+            dgvShips.Columns[11].HeaderText = "Slot 1";
+            dgvShips.Columns[12].HeaderText = "Slot 2";
+            dgvShips.Columns[13].HeaderText = "Slot 3";
+
+            var btnGearSearch = new Button();
+            btnGearSearch.Size = new Size(25, txtGearSearch.ClientSize.Height + 2);
+            btnGearSearch.Location = new Point(txtGearSearch.ClientSize.Width - btnGearSearch.Width, -1);
+            btnGearSearch.Cursor = Cursors.Default;
+            btnGearSearch.Dock = DockStyle.Right;
+            btnGearSearch.Text = "🔍";
+            btnGearSearch.Font = new Font(new FontFamily("OCR A Extended"), 10);
+            btnGearSearch.TextAlign = ContentAlignment.MiddleCenter;
+            btnGearSearch.Click += btnGearSearch_Click;
+            txtGearSearch.Controls.Add(btnGearSearch);
+            SendMessage(txtGearSearch.Handle, 0xd3, (IntPtr)2, (IntPtr)(btnGearSearch.Width << 16));
+
+            var btnShipSearch = new Button();
+            btnShipSearch.Size = new Size(25, txtShipSearch.ClientSize.Height + 2);
+            btnShipSearch.Location = new Point(txtShipSearch.ClientSize.Width - btnShipSearch.Width, -1);
+            btnShipSearch.Dock = DockStyle.Right;
+            btnShipSearch.Cursor = Cursors.Default;
+            btnShipSearch.Text = "🔍"; //poggerss
+            btnShipSearch.Font = new Font(new FontFamily("OCR A Extended"), 10);
+            btnShipSearch.TextAlign = ContentAlignment.MiddleCenter;
+            btnShipSearch.Click += btnShipSearch_Click;
+            txtShipSearch.Controls.Add(btnShipSearch);
+            SendMessage(txtShipSearch.Handle, 0xd3, (IntPtr)2, (IntPtr)(btnShipSearch.Width << 16));
+        }
+
+        private void btnShipSearch_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void btnGearSearch_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
         }
 
         private void Britannia_FormClosing(object sender, EventArgs e)
