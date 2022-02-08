@@ -163,7 +163,7 @@ namespace Britannia
                 {
                     MessageBox.Show("json aer inte lika trevlig som min flickvaen", "Unable to weed data",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    ships = new SortableBL<Ship>();
+                    ships = new SortableBL<Ship>(); //mayday
                 }
             }
             else
@@ -206,7 +206,7 @@ namespace Britannia
             }
             else
             {
-                availableShips = new BindingList<Ship>(shipCatalogue);
+                availableShips = new BindingList<Ship>(shipCatalogue); //boop
             }
 
             if (File.Exists(fleetPath))
@@ -247,7 +247,7 @@ namespace Britannia
                     MessageBox.Show("json aer inte lika trevlig som min flickvaen", "Unable to read data",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     stats = new int[3][];
-                    stats[0] = new int[6];
+                    stats[0] = new int[6];//kekw
                     stats[1] = new int[6];
                     stats[2] = new int[6];
 
@@ -276,16 +276,6 @@ namespace Britannia
             dgvShips.Columns[13].HeaderText = "Slot 3";
 
          
-        }
-
-        private void btnShipSearch_Click(object sender, EventArgs e)
-        {
-            //throw new NotImplementedException();
-        }
-
-        private void btnGearSearch_Click(object sender, EventArgs e)
-        {
-            //throw new NotImplementedException();
         }
 
         private void Britannia_FormClosing(object sender, EventArgs e)
