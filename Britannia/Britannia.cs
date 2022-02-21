@@ -280,18 +280,61 @@ namespace Britannia
 
         private void Britannia_FormClosing(object sender, EventArgs e)
         {
-            string tmp = JsonSerializer.Serialize(shipCatalogue, options);
-            File.WriteAllText(cataloguePath, tmp);
-            tmp = JsonSerializer.Serialize(ships, options);
-            File.WriteAllText(shipPath, tmp);
-            tmp = JsonSerializer.Serialize(gears, options);
-            File.WriteAllText(gearPath, tmp);
-            tmp = JsonSerializer.Serialize(availableShips, options);
-            File.WriteAllText(availablePath, tmp);
-            tmp = JsonSerializer.Serialize(fleets, options);
-            File.WriteAllText(fleetPath, tmp);
-            tmp = JsonSerializer.Serialize(stats, options);
-            File.WriteAllText(statPath, tmp);
+            string tmp = "";
+            try
+            {
+                tmp = JsonSerializer.Serialize(shipCatalogue, options);
+                File.WriteAllText(cataloguePath, tmp);
+            }
+            catch
+            {
+                MessageBox.Show("json aer inte lika trevlig som min flickvaen", "Unable to save data",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            try
+            {
+                tmp = JsonSerializer.Serialize(ships, options);
+                File.WriteAllText(shipPath, tmp);
+            } catch
+            {
+                MessageBox.Show("json aer inte lika trevlig som min flickvaen", "Unable to save data",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            try
+            {
+                tmp = JsonSerializer.Serialize(gears, options);
+                File.WriteAllText(gearPath, tmp);
+            } catch
+            {
+                MessageBox.Show("json aer inte lika trevlig som min flickvaen", "Unable to save data",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            try
+            {
+                tmp = JsonSerializer.Serialize(availableShips, options);
+                File.WriteAllText(availablePath, tmp);
+            } catch
+            {
+                MessageBox.Show("json aer inte lika trevlig som min flickvaen", "Unable to save data",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            try
+            {
+                tmp = JsonSerializer.Serialize(fleets, options);
+                File.WriteAllText(fleetPath, tmp);
+            } catch
+            {
+                MessageBox.Show("json aer inte lika trevlig som min flickvaen", "Unable to save data",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            try { 
+                tmp = JsonSerializer.Serialize(stats, options);
+                File.WriteAllText(statPath, tmp);
+            } catch
+            {
+                MessageBox.Show("json aer inte lika trevlig som min flickvaen", "Unable to save data",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnMainFlt1_Click(object sender, EventArgs e)
