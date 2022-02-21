@@ -25,7 +25,7 @@ namespace Britannia
         public static SortableBL<Gear> gears;
         public static BindingList<Ship> availableShips;
         public static Ship[][] fleets;
-        private int[][] stats; // AP stats
+        private static int[][] stats; // AP stats
         
         // op
         private string cataloguePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\catalogue.txt";
@@ -36,7 +36,7 @@ namespace Britannia
         private string fleetPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\fleets.txt";
         private string statPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\stats.txt";
 
-        private JsonSerializerOptions options = new JsonSerializerOptions
+        private static JsonSerializerOptions options = new JsonSerializerOptions
         {
             IncludeFields = true,
             PropertyNameCaseInsensitive = true
