@@ -146,6 +146,31 @@
   <ItemGroup>
     <None Include="Resources\96px-Unknown_Ships.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Utils\1.png" />
+    <Content Include="Utils\10.png" />
+    <Content Include="Utils\11.png" />
+    <Content Include="Utils\12.png" />
+    <Content Include="Utils\13.png" />
+    <Content Include="Utils\14.png" />
+    <Content Include="Utils\15.png" />
+    <Content Include="Utils\17.png" />
+    <Content Include="Utils\18.png" />
+    <Content Include="Utils\19.png" />
+    <Content Include="Utils\2.png" />
+    <Content Include="Utils\20.png" />
+    <Content Include="Utils\21.png" />
+    <Content Include="Utils\22.png" />
+    <Content Include="Utils\3.png" />
+    <Content Include="Utils\4.png" />
+    <Content Include="Utils\5.png" />
+    <Content Include="Utils\6.png" />
+    <Content Include="Utils\7.png" />
+    <Content Include="Utils\8.png" />
+    <Content Include="Utils\9.png" />
+    <Content Include="Utils\catalogue.txt" />
+    <Content Include="Utils\gcatalogue.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

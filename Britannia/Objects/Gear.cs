@@ -49,6 +49,28 @@ namespace Britannia.Objects
         private readonly int _accuracy;
         private readonly string _image;
 
+        public Gear(string name, string id, int rarity, ArmorType armor, int speed, int oxygen, int ammo, int health, int firepower, int aa, int torpedo, int evasion, int airPower, int oil, int reload, int asw, int accuracy, string image)
+        {
+            _name = name;
+            _id = id;
+            _rarity = rarity;
+            _armor = armor;
+            _speed = speed;
+            _oxygen = oxygen;
+            _ammo = ammo;
+            _health = health;
+            _firepower = firepower;
+            _aa = aa;
+            _torpedo = torpedo;
+            _evasion = evasion;
+            _airPower = airPower;
+            _oil = oil;
+            _reload = reload;
+            _asw = asw;
+            _accuracy = accuracy;
+            _image = image;
+        }
+
         public string Name => _name;
 
         public string ID => _id;

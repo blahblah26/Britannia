@@ -25,6 +25,22 @@ namespace Britannia
             
             lbxAddedShips.DisplayMember = "Name";
             lbxAddedShips.ValueMember = "ID";
+            if (lbxAddedShips.Items.Count > 0)
+            {
+                lbxAddedShips.SelectedIndex = 0;
+                if (Britannia.shipCatalogue.Find(s => s.ID == lbxAddedShips.SelectedValue.ToString()) == null)
+                {
+                    return;
+                }
+                try
+                {
+                    picShip.ImageLocation = Britannia.shipCatalogue.Find(s => s.ID == lbxAddedShips.SelectedValue.ToString()).Image;
+                }
+                catch
+                {
+                    picShip.Image = picShip.ErrorImage;
+                }
+            }
         }
 
         private void btnAddShip_Click(object sender, EventArgs e)

@@ -23,7 +23,7 @@ namespace Britannia
             InitializeComponent();
 
             lbxAddedGear.DataSource = source;
-
+            
             lbxAddedGear.DisplayMember = "Name";
             lbxAddedGear.ValueMember = "ID";
         }
@@ -43,18 +43,7 @@ namespace Britannia
         }
         private void lbxAddedShips_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Britannia.gearCatalogue.Find(s => s.ID == lbxAddedGear.SelectedValue.ToString()) == null)
-            {
-                return;
-            }
-            try
-            {
-                picGear.ImageLocation = Britannia.gearCatalogue.Find(s => s.ID == lbxAddedGear.SelectedValue.ToString()).Image;
-            }
-            catch
-            {
-                picGear.Image = picGear.ErrorImage;
-            }
+            
         }
 
         private void AddGear_Load(object sender, EventArgs e)

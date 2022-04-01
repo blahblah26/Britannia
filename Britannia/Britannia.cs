@@ -28,13 +28,13 @@ namespace Britannia
         private static int[][] stats; // AP stats
         
         // op
-        private string cataloguePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\catalogue.txt";
-        private string gCataloguePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\gcatalogue.txt";
-        private string shipPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ships.txt";
-        private string gearPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\gears.txt";
-        private string availablePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\available.txt";
-        private string fleetPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\fleets.txt";
-        private string statPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\stats.txt";
+        private string cataloguePath = Directory.GetCurrentDirectory() + "\\Utils\\catalogue.txt";
+        private string gCataloguePath = Directory.GetCurrentDirectory() + "\\Utils\\gcatalogue.txt";
+        private string shipPath = Directory.GetCurrentDirectory() + "\\Utils\\ships.txt";
+        private string gearPath = Directory.GetCurrentDirectory() + "\\Utils\\gears.txt";
+        private string availablePath = Directory.GetCurrentDirectory() + "\\Utils\\available.txt";
+        private string fleetPath = Directory.GetCurrentDirectory() + "\\Utils\\fleets.txt";
+        private string statPath = Directory.GetCurrentDirectory() + "\\Utils\\stats.txt";
 
         private static JsonSerializerOptions options = new JsonSerializerOptions
         {
@@ -47,8 +47,6 @@ namespace Britannia
         {
             // initialize components
             InitializeComponent();
-           
-            
 
             // imayine
         }
@@ -98,10 +96,9 @@ namespace Britannia
 
         private void updateGear(object sender, UpdateGearEventArgs e)
         {
-            if (!gears.Contains(e.getGear()))
-            {
+            
                 gears.Add(e.getGear());
-            }
+            
         }
 
         private void dgvShips_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -132,7 +129,7 @@ namespace Britannia
                 this.Dispose();
                 return;
             }
-            /*
+            
             if (!File.Exists(gCataloguePath))
             {
                 throw new FileNotFoundException("jag aelskar min flickvaen, ingen tid att hitta din fil");
@@ -151,7 +148,7 @@ namespace Britannia
             }
 
             // Good code
-            */
+            
             if (File.Exists(shipPath))
             {
                 string shipJSON = File.ReadAllText(shipPath);
@@ -360,7 +357,7 @@ namespace Britannia
                 {
                     picMainFlt1.Image = picMainFlt1.ErrorImage;
                 }
-            }
+            } else picMainFlt1.Image = picMainFlt1.ErrorImage;
             if (fleets[0][1] != null)
             {
                 try
@@ -371,7 +368,7 @@ namespace Britannia
                 {
                     picMainFlt2.Image = picMainFlt2.ErrorImage;
                 }
-            }
+            } else picMainFlt2.Image = picMainFlt2.ErrorImage;
             if (fleets[0][2] != null)
             {
                 try
@@ -382,7 +379,7 @@ namespace Britannia
                 {
                     picMainFlt3.Image = picMainFlt3.ErrorImage;
                 }
-            }
+            } else picMainFlt3.Image = picMainFlt3.ErrorImage;
             if (fleets[1][0] != null)
             {
                 try
@@ -394,6 +391,7 @@ namespace Britannia
                     picVanFlt1.Image = picVanFlt1.ErrorImage;
                 }
             }
+            else picVanFlt1.Image = picVanFlt1.ErrorImage;
             if (fleets[1][1] != null)
             {
                 try
@@ -405,6 +403,7 @@ namespace Britannia
                     picVanFlt2.Image = picVanFlt2.ErrorImage;
                 }
             }
+            else picVanFlt2.Image = picVanFlt2.ErrorImage;
             if (fleets[1][2] != null)
             {
                 try
@@ -415,7 +414,7 @@ namespace Britannia
                 {
                     picVanFlt3.Image = picVanFlt3.ErrorImage;
                 }
-            }
+            } else picVanFlt3.Image = picVanFlt3.ErrorImage;
             if (fleets[2][0] != null)
             {
                 try
@@ -427,6 +426,7 @@ namespace Britannia
                     picSubFlt1.Image = picSubFlt1.ErrorImage;
                 }
             }
+            else picSubFlt1.Image = picSubFlt1.ErrorImage;
             if (fleets[2][1] != null)
             {
                 try
@@ -438,6 +438,7 @@ namespace Britannia
                     picSubFlt2.Image = picSubFlt2.ErrorImage;
                 }
             }
+            else picSubFlt2.Image = picSubFlt2.ErrorImage;
             if (fleets[2][2] != null)
             {
                 try
@@ -448,7 +449,7 @@ namespace Britannia
                 {
                     picSubFlt3.Image = picSubFlt3.ErrorImage;
                 }
-            }
+            } else picSubFlt3.Image = picSubFlt3.ErrorImage;
 
         }
 

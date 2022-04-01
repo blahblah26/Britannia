@@ -158,6 +158,7 @@ namespace Britannia.Objects
             return obj is Ship ship &&
                    _name == ship._name &&
                    _id == ship._id &&
+                   _image == ship._image &&
                    _rarity == ship._rarity &&
                    _nation == ship._nation &&
                    _type == ship._type &&
@@ -181,6 +182,7 @@ namespace Britannia.Objects
                    _slot3 == ship._slot3 &&
                    Name == ship.Name &&
                    ID == ship.ID &&
+                   Image == ship.Image &&
                    Nation == ship.Nation &&
                    Luck == ship.Luck &&
                    Speed == ship.Speed &&
